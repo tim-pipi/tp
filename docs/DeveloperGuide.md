@@ -1,7 +1,7 @@
 ---
-  layout: default.md
-    title: "Developer Guide"
-    pageNav: 3
+layout: default.md
+title: "Developer Guide"
+pageNav: 3
 ---
 
 # Developer Guide
@@ -1388,3 +1388,43 @@ entries at the top of the list rather than at the bottom.
   time and improves the overall user experience, making the application more
   intuitive and efficient.
 
+### Sorting by Multiple Fields
+
+**Current Implementation**: Currently, the application allows sorting of data by
+a single field at a time using commands such as `c/a` for sorting cycles in
+ascending order or `n/d` for sorting company names in descending order.
+
+**Planned Enhancement**: Enable sorting by multiple fields to enhance the
+flexibility of data organization. This improvement addresses the limitation of
+the current sorting functionality, allowing users to sort data by more than one
+criterion at a time. For example, users should be able to sort first by cycle in
+ascending order and then by company name in ascending order using the following
+command:
+
+```shell
+sort c/a n/a
+```
+
+This means that if 2 internship applications have the same cycle, for example
+`Summer 2024`, they will be sorted by company name in ascending order
+(`Apple` before `Google`).
+
+**Proposed Changes**:
+
+<box type="info" seamless>
+
+**Note:** The `InternApplicationComparator` class already contains a
+`createCompositeComparator()` method that can be used to combine multiple
+`InternApplication` comparators into a single comparator.
+</box>
+
+- Update `ArgumentTokenizer` to parse the order of prefixes.
+- Update `SortCommandParser` to allow for multiple sorting criteria.
+
+**Expected Benefits**:
+
+- Users can organise data more precisely by specifying multiple sorting
+  criteria.
+- Enhanced user experience with the ability to customise data sorting based on
+  specific needs.
+- Improved usability for users who require complex sorting for data analysis.
