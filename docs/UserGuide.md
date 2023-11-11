@@ -485,6 +485,8 @@ Upon hitting `Enter`, the application will display the link to this **User Guide
 
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Listing Your Internship Applications: `list`
@@ -528,6 +530,8 @@ By glancing through the list, you can quickly assess your application status, th
 * Combined with the [**`sort`**](#sorting-your-internship-applications-sort) command, the `list` function becomes an even more powerful tool, enabling you to customize the view of your applications based on specific criteria.
 
 </box>
+
+[Back to Command Summary](#command-summary)
 
 __________________________________________________________________________________________________________________
 
@@ -601,6 +605,8 @@ systematically stored, making tracking and follow-ups more manageable.
 
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Editing Your Internship Application : `edit`
@@ -658,6 +664,8 @@ This ensures your application list remains current and accurate, reflecting the 
 * While it's crucial to keep your applications updated, make sure to double-check the changes you're making to ensure accuracy.
 
 </box>
+
+[Back to Command Summary](#command-summary)
 
 __________________________________________________________________________________________________________________
 
@@ -757,6 +765,8 @@ After hitting `Enter`, you can see that the third note is immediately deleted fr
 
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Deleting Your Internship Application : `delete`
@@ -802,6 +812,8 @@ The remaining applications adjust their index numbers accordingly, ensuring a co
 * If you accidentally deleted the wrong internship application, you can use the `undo` command to reverse this command.
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Reverting Your Mistake: `undo`
@@ -843,6 +855,8 @@ In the example below, the previous `delete` command is undone.
 
 Once you are at the latest state, _LetsGetHired_ will let you know that there are no changes to be undone.
 </box>
+
+[Back to Command Summary](#command-summary)
 
 __________________________________________________________________________________________________________________
 
@@ -893,6 +907,8 @@ with that particular application.
 * Regularly reviewing applications in detail can help you stay on top of any action items or next steps.
 
 </box>
+
+[Back to Command Summary](#command-summary)
 
 __________________________________________________________________________________________________________________
 
@@ -962,6 +978,8 @@ This feature is particularly useful when you need a more refined list or when yo
 
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Sorting Your Internship Applications: `sort`
@@ -1018,6 +1036,8 @@ Regularly sorting and reviewing your applications can help you manage your appli
 
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Clearing Your Internship Applications : `clear`
@@ -1058,6 +1078,8 @@ After hitting `Enter`, you now have a fresh new empty list for you to fill up wi
 * If you accidentally cleared your internship applications list, you can use the `undo` command to reverse this command.
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Exiting _LetsGetHired_ : `exit`
@@ -1084,6 +1106,8 @@ The `exit` command does **not** require any parameters.
 Upon executing the `exit` command, **_LetsGetHired_** will initiate its shutdown sequence. 
 This involves saving any changes you've made during your session and closing the application window. 
 It ensures that all your data remains intact the next time you launch the program.
+
+[Back to Command Summary](#command-summary)
 
 [Back to top](#user-guide)
 
@@ -1118,20 +1142,20 @@ ________________________________________________________________________________
 
 ## **Command Summary**
 
-| **Command** | **Usage**                                                                                | **Example**                                                                 |
-|-------------|------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| **Help**    | `help`                                                                                   | `help`                                                                      |
-| **List**    | `list`                                                                                   | `list`                                                                      |
-| **Add**     | `add n/COMPANY_NAME r/ROLE c/CYCLE [s/STATUS] [d/DEADLINE]`                              | `add n/Google r/Software Engineering c/Summer 2024 s/Offered d/25 Oct 2023` |
-| **Edit**    | `edit INDEX [n/COMPANY_NAME] [r/ROLE] [c/CYCLE] [s/STATUS] [d/DEADLINE]`                 | `edit 1 n/Apple`                                                            |
-| **Note**    | `note INDEX [i/NOTE]` (to add a note)<br> `note INDEX [o/NOTE_INDEX]` (to delete a note) | `note 1 i/Interview on 26 Oct`<br> `note 1 o/1`                             |
-| **Delete**  | `delete INDEX`                                                                           | `delete 1`                                                                  |
-| **Undo**    | `undo`                                                                                   | `undo`                                                                      |
-| **View**    | `view INDEX`                                                                             | `view 1`                                                                    |
-| **Find**    | `find [n/COMPANY_NAME] [r/ROLE] [c/CYCLE] [s/STATUS] [d/DEADLINE] [i/NOTE]`              | `find n/Google`                                                             |
-| **Sort**    | `sort [n/ORDER] [r/ORDER] [c/ORDER] [s/ORDER] [d/ORDER]`                                 | `sort n/a`                                                                  |
-| **Clear**   | `clear`                                                                                  | `clear`                                                                     |
-| **Exit**    | `exit`                                                                                   | `exit`                                                                      |
+| **Command**                                                     | **Usage**                                                                                | **Example**                                                                 |
+|-----------------------------------------------------------------|------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| **[Help](#viewing-help-help)**                                  | `help`                                                                                   | `help`                                                                      |
+| **[List](#listing-your-internship-applications-list)**          | `list`                                                                                   | `list`                                                                      |
+| **[Add](#adding-your-new-internship-application-add)**          | `add n/COMPANY_NAME r/ROLE c/CYCLE [s/STATUS] [d/DEADLINE]`                              | `add n/Google r/Software Engineering c/Summer 2024 s/Offered d/25 Oct 2023` |
+| **[Edit](#editing-your-internship-application-edit)**           | `edit INDEX [n/COMPANY_NAME] [r/ROLE] [c/CYCLE] [s/STATUS] [d/DEADLINE]`                 | `edit 1 n/Apple`                                                            |
+| **[Note](#managing-notes-in-your-internship-application-note)** | `note INDEX [i/NOTE]` (to add a note)<br> `note INDEX [o/NOTE_INDEX]` (to delete a note) | `note 1 i/Interview on 26 Oct`<br> `note 1 o/1`                             |
+| **[Delete](#deleting-your-internship-application-delete)**      | `delete INDEX`                                                                           | `delete 1`                                                                  |
+| **[Undo](#reverting-your-mistake-undo)**                        | `undo`                                                                                   | `undo`                                                                      |
+| **[View](#viewing-your-internship-application-view)**           | `view INDEX`                                                                             | `view 1`                                                                    |
+| **[Find](#searching-your-internship-application-find)**         | `find [n/COMPANY_NAME] [r/ROLE] [c/CYCLE] [s/STATUS] [d/DEADLINE] [i/NOTE]`              | `find n/Google`                                                             |
+| **[Sort](#sorting-your-internship-applications-sort)**          | `sort [n/ORDER] [r/ORDER] [c/ORDER] [s/ORDER] [d/ORDER]`                                 | `sort n/a`                                                                  |
+| **[Clear](#clearing-your-internship-applications-clear)**       | `clear`                                                                                  | `clear`                                                                     |
+| **[Exit](#exiting-letsgethired-exit)**                          | `exit`                                                                                   | `exit`                                                                      |
 
 
 This table provides a quick and clear reference to the commands available in **_LetsGetHired_**. 
