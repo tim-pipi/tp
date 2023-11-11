@@ -43,6 +43,8 @@ If you are new to this journey, don't worry! We've got you covered. Feel free to
 Our goal is to make your internship application experience as smooth and successful as possible, regardless of your level of experience. 
 Let's embark on this journey together and make your internship goals a reality.
 
+[Back to top](#user-guide)
+
 __________________________________________________________________________________________________________________
 
 <div style="page-break-after: always;"></div>
@@ -139,19 +141,21 @@ These are some helpful tips. Skip these if you are in a hurry!
 
 </box>
 
-<box type="info" light>
+<box type="tip" light>
 
 These are also some helpful tips. Skip these if you are in a hurry!
 
 </box>
 
-<box type="info" seamless>
+<box type="tip" seamless>
 
 These are also some helpful tips. Skip these if you are in a hurry!
 
 </box>
 
 Now that you are familiar with the User Guide, let's get right into it!
+
+[Back to top](#user-guide)
 
 __________________________________________________________________________________________________________________
 
@@ -191,7 +195,7 @@ ________________________________________________________________________________
     ![Jar File Download](images/tutorial/downloadJar.png)
 
 1. Locate the `letsgethired.jar` file
-   * After downloading, find the `letsgethired.jar` file on your z`computer. It might be in your `Downloads` folder or wherever you chose to save it.
+   * After downloading, find the `letsgethired.jar` file on your computer. It might be in your `Downloads` folder or wherever you chose to save it.
 
 1. Choose Your **Home Folder**
    * Decide on a folder where you want all your **_LetsGetHired_** data to reside. This can be an existing folder or you can create a new one specifically for **_LetsGetHired_**.
@@ -251,6 +255,8 @@ This is to help you get a feel for how the app works and how your entries will a
 
 Now that you are familiar with the user interface of _LetsGetHired_, let's jump right into managing your 
 internship applications in this [**Tutorial**](#tutorial-managing-your-first-internship-application).
+
+[Back to top](#user-guide)
 
 __________________________________________________________________________________________________________________
 
@@ -356,6 +362,8 @@ For other commands, please refer to the [_Commands_ section of the **User Guide*
 
 </box>
 
+[Back to top](#user-guide)
+
 __________________________________________________________________________________________________________________
 
 <div style="page-break-after: always;"></div>
@@ -375,9 +383,9 @@ the [_Command Summary_ section of the **User Guide**](#command-summary) below.
 
 **Notes about the command format:**<br>
 
-* All commands are case-sensitive. For example sort is a valid command, but SORT or SoRt are invalid commands.<br>
+* All commands are case-sensitive. For example, `sort` is a valid command, but `SORT` or `SoRt` are invalid commands.<br>
 
-* All prefixes are case-sensitive. For example s/ (the prefix for status) and S/ (no attached meaning) are considered different
+* All prefixes are case-sensitive. For example, `s/` (the prefix for status) and `S/` (no attached meaning) are considered different.
 
 * Words in `UPPER_CASE` are **parameters** which you will type in.<br>
     ```
@@ -653,7 +661,7 @@ This ensures your application list remains current and accurate, reflecting the 
 
 __________________________________________________________________________________________________________________
 
-### Adding Notes To Your Internship Application : `note`
+### Managing Notes In Your Internship Application : `note`
 
 The `note` command is a beneficial tool designed to enrich your internship applications with **additional details**. 
 
@@ -1077,6 +1085,8 @@ Upon executing the `exit` command, **_LetsGetHired_** will initiate its shutdown
 This involves saving any changes you've made during your session and closing the application window. 
 It ensures that all your data remains intact the next time you launch the program.
 
+[Back to top](#user-guide)
+
 __________________________________________________________________________________________________________________
 
 ## **Storage**
@@ -1099,6 +1109,8 @@ If your changes to the data file makes its format invalid, _LetsGetHired_ will d
 data file at the next run. Hence, it is recommended to take a backup of the file before editing it.
 
 </box>
+
+[Back to top](#user-guide)
 
 __________________________________________________________________________________________________________________
 
@@ -1125,6 +1137,8 @@ ________________________________________________________________________________
 This table provides a quick and clear reference to the commands available in **_LetsGetHired_**. 
 You can use it to efficiently navigate through the program and manage your internship applications.
 
+[Back to top](#user-guide)
+
 __________________________________________________________________________________________________________________
 
 <div style="page-break-after: always;"></div>
@@ -1150,6 +1164,8 @@ ________________________________________________________________________________
   primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application
   before running the application again.
 
+[Back to top](#user-guide)
+
 __________________________________________________________________________________________________________________
 
 <div style="page-break-after: always;"></div>
@@ -1169,3 +1185,5 @@ Here are the definitions of some terms which is used throughout the User Guide.
 | **Command**                           | An input from the user that tells _LetsGetHired_ which action to perform.                                                                                                                |
 | **Parameter**                         | A placeholder used in a command to represent a piece of information that needs to be provided when that command is executed.                                                             |
 | **JSON (JavaScript Object Notation)** | A lightweight data-interchange format that is easy for humans to read and write and easy for machines to parse and generate.                                                             |
+
+[Back to top](#user-guide)
