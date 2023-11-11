@@ -25,9 +25,7 @@ With _LetsGetHired_, you can benefit from:
 - **Deadlines**: Set and track deadlines for your internship applications, so you never miss an opportunity.
 
 In addition to these capabilities, we recognize the importance of **speed and efficiency**. Thus, _LetsGetHired_ is
-**optimized for use via a Command Line Interface (CLI)**, but you still enjoy the advantages of a Graphical User Interface
-(GUI). If you are a swift typist, _LetsGetHired_ can streamline your internship tracking **faster than many standard
-GUI-based tools available.**
+**optimized for use via a [Command Line Interface (CLI)](#glossary)**, but you still enjoy the advantages of a [Graphical User Interface(GUI)](#glossary). If you are a swift typist, _LetsGetHired_ can streamline your internship tracking **faster than many standard GUI-based tools available.**
 
 **_LetsGetHired_ is perfect for you if you are a Computer Science undergraduate student.**
 
@@ -77,6 +75,8 @@ way too!
 ```
 
 #### Links
+
+What are hyperlinks? [Click here to find out!](#glossary)
 
 [Hyperlinks will be displayed in this format.](#links)
 
@@ -218,7 +218,7 @@ ________________________________________________________________________________
 
 ### Launching _LetsGetHired_
 
-1. Open your **Command Terminal**.
+1. Open your **[Command Terminal](#glossary)**.
     * On _Windows_: Press `Windows + R` keys simultaneously, type `cmd` and press `Enter`. 
       * Alternatively, press `Windows` key, type `Terminal` and press `Enter`.
     * On _macOS_: Press `Command + Space` to open Spotlight search, type `Terminal`, and press `Enter`.
@@ -229,15 +229,15 @@ ________________________________________________________________________________
     ```
     <box type="tip" seamless>
     
-    If you are unfamiliar with the commands in the Command Terminal, we suggest reading [this](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands/).
+    If you are unfamiliar with the commands in the [Command Terminal](#glossary), we suggest reading [this](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands/).
     
     </box>
 
-1. You should now see a graphical user interface (GUI) pop up on your screen (as shown in the picture below).
+1. You should now see a [graphical user interface (GUI)](#glossary) pop up on your screen (as shown in the picture below).
 
 <box type="info" light>
 
-Please note that the app comes preloaded with some **sample data**. <br>
+Please note that the app comes preloaded with some **[sample data](#glossary)**. <br>
 This is to help you get a feel for how the app works and how your entries will appear.
 
 </box>
@@ -264,7 +264,7 @@ ________________________________________________________________________________
 
 ## **Tutorial - Managing Your First Internship Application**
 
-In this tutorial, we will walk you through a typical workflow for using _LetsGetHired_ to manage your internship applications. <br>
+In this tutorial, we will walk you through a typical [workflow](#glossary) for using _LetsGetHired_ to manage your internship applications. <br>
 
 ##### **Step 1: Adding Your Internship Application**
 
@@ -1025,7 +1025,7 @@ ________________________________________________________________________________
 The `clear` command provides an efficient way to **erase all internship application** records in your database. 
 
 It's a complete reset, ensuring you have a clean slate to work with. This command can be particularly useful if you've 
-been experimenting with sample data or if you want to start fresh for a new application cycle.
+been experimenting with [sample data](#glossary) or if you want to start fresh for a new application cycle.
 
 ##### Command Usage
 
@@ -1054,7 +1054,7 @@ After hitting `Enter`, you now have a fresh new empty list for you to fill up wi
 
 <box type="tip" light>
 
-* **Recommended Use**: If you've been familiarizing yourself with **_LetsGetHired_** using sample data, consider using the `clear` command to wipe the slate clean and input your genuine applications.
+* **Recommended Use**: If you've been familiarizing yourself with **_LetsGetHired_** using [sample data](#glossary), consider using the `clear` command to wipe the slate clean and input your genuine applications.
 * If you accidentally cleared your internship applications list, you can use the `undo` command to reverse this command.
 </box>
 
@@ -1099,7 +1099,7 @@ _LetsGetHired_ data are **saved in the hard disk automatically** after any comma
 
 ##### Editing the data file
 
-_LetsGetHired_ data are **saved automatically as a JSON file** `[JAR file location]/data/letsgethired.json`. 
+_LetsGetHired_ data are **saved automatically as a [JSON](#glossary) file** `[JAR file location]/data/letsgethired.json`. 
 If you are an advanced user, you are welcome to update data directly by editing that data file.
 
 <box type="warning" seamless>
@@ -1146,7 +1146,7 @@ ________________________________________________________________________________
 ## **FAQ**
 
 **Q**: How do I know my Java version?<br>
-**A**: Open your command terminal and enter the following command:<br>
+**A**: Open your [command terminal](#glossary) and enter the following command:<br>
     
 ```
 java -version
