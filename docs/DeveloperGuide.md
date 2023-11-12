@@ -1430,3 +1430,38 @@ This means that if 2 internship applications have the same cycle, for example
   sorting based on specific needs.
 - Improved usability for users who require complex sorting for internship
   application analysis.
+
+### Enhanced Version Control: Redo
+
+**Current Implementation**: In the current version of our application, users are
+able to undo changes made
+using the Undo command. This allows users to revert formerly destructive
+commands, for a more forgiving and
+beginner-friendly experience. We see a redo function as a natural progression
+from undo, where users will be
+given greater agency in managing their internship applications.
+
+**Planned Enhancement**: We plan to implement a Redo command that will allow
+users to redo commands that
+were undone. This change empowers users to have greater flexibility in managing
+their internship
+applications by enabling users to toggle between app states with ease.
+
+**Proposed Changes**:
+
+* **Undone States History**: Store undone states in a separate history, similar
+  to how past states are
+  stored currently.
+
+* **Redo Command** : Introduce a new command : Redo, that will redo a command
+  that was previously undone
+  or notify the user that there are no commands to redo.
+
+**Expected Benefits**:
+
+* **Improved Beginner Experience**: By providing the option to redo, new users
+  can have an easier time
+  exploring commands and undoing and redoing changes when necessary.
+* **Increased Efficiency**: This enhancement allows users to manage their
+  applications more efficiently
+  and save time in the event of an unintentional undos.
