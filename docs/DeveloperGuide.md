@@ -1390,7 +1390,8 @@ entries at the top of the list rather than at the bottom.
 
 ### Sorting by Multiple Fields
 
-**Current Implementation**: In the current version of our application, the application only allows sorting of internship applications by
+**Current Implementation**: In the current version of our application, the
+application only allows sorting of internship applications by
 ONE field at a time using parameters such as `c/a` for sorting by cycles in
 ascending order or `n/d` for sorting by company names in descending order.
 
@@ -1423,8 +1424,9 @@ This means that if 2 internship applications have the same cycle, for example
 
 **Expected Benefits**:
 
-- Users can organise data more precisely by specifying multiple sorting
-  criteria.
-- Enhanced user experience with the ability to customise data sorting based on
-  specific needs.
-- Improved usability for users who require complex sorting for data analysis.
+- Users can organise internship applications more precisely by specifying
+  multiple sorting criteria.
+- Enhanced user experience with the ability to customise internship application
+  sorting based on specific needs.
+- Improved usability for users who require complex sorting for internship
+  application analysis.
