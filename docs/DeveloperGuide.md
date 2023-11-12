@@ -1162,142 +1162,143 @@ java -jar letsgethired.jar
 
 Expected: The most recent window size and location is retained.
 
-### Adding an `internApplication`
+### Adding an `InternApplication`
 
 1. Prerequisites: Launch the app
 
 1. Test case: `add n/Optiver r/Quantitative Trader c/Summer 2024`<br>
-   Expected: The `internApplication` is added to the list. 
+   Expected: The `InternApplication` is added to the list. 
    The added internship application is displayed in the select view.
 
 1. Test case: `add n/Jump Trading r/Quantitative Researcher c/Summer 2024 s/Deleted`<br>
-   Expected: No `internApplication` is added to the list. Error message is displayed.
+   Expected: No `InternApplication` is added to the list. Error message is displayed.
 
 1. Other incorrect `add` commands to try: `add`, `add ...`,  where (... are parameters with invalid values or 
    missing required parameters)<br>
    Expected: Similar to previous.
 
-### Editing an `internApplication`
+### Editing an `InternApplication`
 
-1. Prerequisites: List all `internApplication`s using the `list` command.
-   Multiple `internApplication`s in the list.
+1. Prerequisites: List all `InternApplication`s using the `list` command.
+   Multiple `InternApplication`s in the list.
 
 1. Test case: `edit 1 r/Software Engineer c/Summer 2024`<br>
-   Expected: The first `internApplication` in the list is edited and the `role` is set to `Software Engineer` and
+   Expected: The first `InternApplication` in the list is edited and the `role` is set to `Software Engineer` and
    the `cycle` is set to `Summer 2024`. The edited internship application is displayed in the select view.
 
 1. Test case: `edit 0`<br>
-   Expected: No `internApplication` is edited. Error message is displayed.
+   Expected: No `InternApplication` is edited. Error message is displayed.
 
 1. Test case: `edit s/Deleted`<br>
-   Expected: No `internApplication` is edited. Error message is displayed.
+   Expected: No `InternApplication` is edited. Error message is displayed.
 
 1. Other incorrect `edit` commands to try: `edit`, `edit ...`, `edit x` where (... are parameters with invalid values 
    and x is larger than the list size)<br>
    Expected: Similar to previous.
 
-### Adding a `note` in an `internApplication`
+### Adding a `note` in an `InternApplication`
 
-1. Prerequisites: List all `internApplication`s using the `list` command.
-   Multiple `internApplication`s in the list.
+1. Prerequisites: List all `InternApplication`s using the `list` command.
+   Multiple `InternApplication`s in the list.
 
 1. Test case: `note 1 i/Prepare for behavioural questions`<br>
-   Expected: A new `note` is added to the first `internApplication` in the list. 
+   Expected: A new `note` is added to the first `InternApplication` in the list. 
    The internship application with the new note is displayed in the select view.
 
 1. Test case: `note 0 i/Prepare for machine learning questions`<br>
-   Expected: No `note` is added to any `internApplication`. Error message is displayed.
+   Expected: No `note` is added to any `InternApplication`. Error message is displayed.
 
 1. Other incorrect `note` commands to try: `note`, `note x i/Prepare for behavioural questions` where 
    (x is larger than the list size)<br>
    Expected: Similar to previous.
 
-### Deleting a `note` from an `internApplication`
+### Deleting a `note` from an `InternApplication`
 
-1. Prerequisites: List all `internApplication`s using the `list` command.
-   Multiple `internApplication`s in the list.
+1. Prerequisites: List all `InternApplication`s using the `list` command.
+   Multiple `InternApplication`s in the list.
 
 1. Test case: `note 1 o/1`<br>
-   Expected: The first `note` from the first `internApplication` in the list is deleted.
+   Expected: The first `note` from the first `InternApplication` in the list is deleted.
    The internship application with the deleted note is displayed in the select view.
 
 1. Test case: `note 0 o/1`<br>
-   Expected: No `note` is deleted from any `internApplication`. Error message is displayed.
+   Expected: No `note` is deleted from any `InternApplication`. Error message is displayed.
 
 1. Test case: `note 1 o/0`<br>
-   Expected: No `note` is deleted from any `internApplication`. Error message is displayed.
+   Expected: No `note` is deleted from any `InternApplication`. Error message is displayed.
 
 1. Other incorrect `note` commands to try: `note`, `note x o/1`, `note 1 o/y` where (y is larger than the number 
-   of notes in the first `internApplication` in the list and x is larger than the list size)<br>
+   of notes in the first `InternApplication` in the list and x is larger than the list size)<br>
    Expected: Similar to previous.
 
-### Viewing an `internApplication`
+### Viewing an `InternApplication`
 
-1. Prerequisites: List all `internApplication`s using the `list` command.
-   Multiple `internApplication`s in the list.
+1. Prerequisites: List all `InternApplication`s using the `list` command.
+   Multiple `InternApplication`s in the list.
 
 1. Test case: `view 1`<br>
-   Expected: The first `internApplication` in the list is displayed in the select view.
+   Expected: The first `InternApplication` in the list is displayed in the select view.
 
 1. Test case: `view 0`<br>
-   Expected: No `internApplication` is displayed in the select view. Error message is displayed.
+   Expected: No `InternApplication` is displayed in the select view. Error message is displayed.
 
 1. Other incorrect `view` commands to try: `view`, `view x` (where x is larger than the list size)<br>
    Expected: Similar to previous.
 
-### Searching for an `internApplication`
+### Searching for an `InternApplication`
 
-1. Prerequisites: List all `internApplication`s using the `list` command.
-   Multiple `internApplication`s in the list.
+1. Prerequisites: List all `InternApplication`s using the `list` command.
+   Multiple `InternApplication`s in the list.
 
-1. Test case: <br>
-   Expected:
+1. Test case: `find n/Jane Street c/Summer 2024 r/Software Engineer`<br>
+   Expected: All the `InternApplication`s with either the `company` name containing `Jane Street` or `role` 
+   containing `Software Engineer` or `cycle` containing `Summer 2024` are displayed in the list view.
 
-1. Test case: <br>
-   Expected:
+1. Test case: `find`<br>
+   Expected: All `InternApplication`s are displayed in the list view. Error message is displayed.
 
-1. Other incorrect `find` commands to try: <br>
-   Expected:
+### Sorting the `InternApplication`s
 
-### Sorting the `internApplication`s
+1. Prerequisites: List all `InternApplication`s using the `list` command.
+   Multiple `InternApplication`s in the list.
 
-1. Prerequisites: List all `internApplication`s using the `list` command.
-   Multiple `internApplication`s in the list.
+1. Test case: `sort n/a`<br>
+   Expected: All the `InternApplication`s are displayed in the list view in sorted order by `name` in ascending order.
 
-1. Test case: <br>
-   Expected:
+1. Test case: `sort s/d`<br>
+   Expected: All the `InternApplication`s are displayed in the list view in sorted order by `status` in descending order.
 
-1. Test case: <br>
-   Expected:
+1. Test case: `sort c/n`<br>
+   Expected: All the `InternApplication`s are displayed in the list view. Error message is displayed.
 
-1. Other incorrect `sort` commands to try: <br>
-   Expected:
+1. Other incorrect `sort` commands to try: `sort`, `sort ...`,  where (... are parameters with invalid values)<br>
+   Expected: Similar to previous.
 
-### Deleting an `internApplication`
+### Deleting an `InternApplication`
 
-1. Prerequisites: List all `internApplication`s using the `list` command. 
-   Multiple `internApplication`s in the list.
+1. Prerequisites: List all `InternApplication`s using the `list` command. 
+   Multiple `InternApplication`s in the list.
 
 1. Test case: `delete 1`<br>
-   Expected: First `internApplication` is deleted from the list. 
+   Expected: First `InternApplication` is deleted from the list. 
    Details of the deleted internship application shown in the status message.
 
 1. Test case: `delete 0`<br>
-   Expected: No `internApplication` is deleted. Error message is displayed.
+   Expected: No `InternApplication` is deleted. Error message is displayed.
 
 1. Other incorrect `delete` commands to try: `delete`, `delete x` (where x is larger than the list size)<br>
    Expected: Similar to previous.
 
 ### Undoing a command
 
-1. Prerequisites: Execute some command that modifies any `internApplication` - `add`, `edit`, `note` or `delete`,
+1. Prerequisites: Execute some command that modifies any `InternApplication` - `add`, `edit`, `note` or `delete`,
    or modifies the list of internship applications - `find`.
 
 1. Test case: `undo`<br>
-   Expected: Undoes the modification to the `internApplication` and the list of internship applications.
+   Expected: Undoes the modification to the `InternApplication` and the list of internship applications.
 
 1. Test case: `undo`, without any command being executed before the `undo`<br>
-   Expected: No change to any `internApplication` or the list of internship applications.
+   Expected: No change to any `InternApplication` or the list of internship applications.
 
 ### Saving data
 
