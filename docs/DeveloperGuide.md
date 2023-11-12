@@ -1135,11 +1135,11 @@ testers are expected to do more *exploratory* testing.
 
 ### Launch and shutdown
 
-1. Initial launch
+**Initial launch**
 
-    1. Download the jar file and copy into an empty folder
+1. Download the jar file and copy into an empty folder
 
-    2. Type the following command in your terminal:
+2. Type the following command in your terminal:
 
 ```shell
 java -jar letsgethired.jar
@@ -1148,13 +1148,13 @@ java -jar letsgethired.jar
 Expected: Shows the GUI with a set of sample
 internship applications. The window size may not be optimum.
 
-1. Saving window preferences
+**Saving window preferences**
 
-    1. Resize the window to an optimum size. Move the window to a different
+1. Resize the window to an optimum size. Move the window to a different
        location. Close the window.
 
-    1. Re-launch the application by typing the following command in your
-       terminal:
+1. Re-launch the application by typing the following command in your
+   terminal:
 
 ```shell
 java -jar letsgethired.jar
@@ -1162,39 +1162,151 @@ java -jar letsgethired.jar
 
 Expected: The most recent window size and location is retained.
 
-1. _{ more test cases ... }_
+### Adding an `internApplication`
+
+{description}
+
+1. Prerequisites: 
+
+1. Test case: <br>
+   Expected: 
+
+1. Test case: <br>
+   Expected: 
+
+1. Other incorrect delete commands to try: <br>
+   Expected: 
+
+### Editing an `internApplication`
+
+{description}
+
+1. Prerequisites:
+
+1. Test case: <br>
+   Expected:
+
+1. Test case: <br>
+   Expected:
+
+1. Other incorrect delete commands to try: <br>
+   Expected:
+
+### Adding a `note` in an `internApplication`
+
+{description}
+
+1. Prerequisites:
+
+1. Test case: <br>
+   Expected:
+
+1. Test case: <br>
+   Expected:
+
+1. Other incorrect delete commands to try: <br>
+   Expected:
+
+### Deleting a `note` from an `internApplication`
+
+{description}
+
+1. Prerequisites:
+
+1. Test case: <br>
+   Expected:
+
+1. Test case: <br>
+   Expected:
+
+1. Other incorrect delete commands to try: <br>
+   Expected:
+
+### Viewing an `internApplication`
+
+{description}
+
+1. Prerequisites:
+
+1. Test case: <br>
+   Expected:
+
+1. Test case: <br>
+   Expected:
+
+1. Other incorrect delete commands to try: <br>
+   Expected:
+
+### Searching for an `internApplication`
+
+{description}
+
+1. Prerequisites:
+
+1. Test case: <br>
+   Expected:
+
+1. Test case: <br>
+   Expected:
+
+1. Other incorrect delete commands to try: <br>
+   Expected:
+
+### Sorting the `internApplication`s
+
+{description}
+
+1. Prerequisites:
+
+1. Test case: <br>
+   Expected:
+
+1. Test case: <br>
+   Expected:
+
+1. Other incorrect delete commands to try: <br>
+   Expected:
 
 ### Deleting an `internApplication`
 
-1. Deleting an `internApplication` while all `internApplication`s are being
-   shown
-
-    1. Prerequisites: List all `internApplication`s using the `list` command.
+1. Prerequisites: List all `internApplication`s using the `list` command. 
        Multiple `internApplication`s in the list.
 
-    1. Test case: `delete 1`<br>
-       Expected: First intern application is deleted from the list.
-       Details of the deleted contact shown in the status message.
-       Timestamp in the status bar is updated.
+1. Test case: `delete 1`<br>
+       Expected: First intern application is deleted from the list. 
+       Details of the deleted internship application shown in the status message.
 
-    1. Test case: `delete 0`<br>
-       Expected: No `internApplication` is deleted. Error details shown in the
-       status message. Status bar remains the same.
+1. Test case: `delete 0`<br>
+       Expected: No `internApplication` is deleted. Error message is displayed
 
-    1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (
-       where x is larger than the list size)<br>
+1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to previous.
-
-1. _{ more test cases ... }_
 
 ### Saving data
 
-1. Dealing with missing/corrupted data files
+LetsGetHired saves your data locally after any command you execute.
 
-    1. _{explain how to simulate a missing/corrupted file, and the expected
-       behavior}_
+Dealing with a **missing data folder**
 
-1. _{ more test cases ... }_
+1. Prerequisites: On app launch, if no data folder is detected within the same directory as the jar file.
+
+1. Test case: Run any command and a new data folder containing a `letsgethired.json` file will be generated.
+
+1. Test case: If you do not run any command and quit the app, no data folder or file will be generated.
+
+Dealing with a **missing data file** (`letsgethired.json`)
+
+1. Prerequisites: On app launch, if there is an empty data folder within the same directory as the jar file.
+
+1. Test case: Run any command and a `letsgethired.json` file will be generated within the data folder.
+
+1. Test case: If you do not run any command and quit the app, no data file will be generated.
+
+Dealing with a **corrupted data file** (`letsgehired.json`)
+
+1. Prerequisites: On app launch, if the `letsgethired.json` file in the data folder within the same directory as the jar file is corrupted.
+
+1. Test case: Run any command and the contents of the `letsgethired.json` file will be overwritten to a json file with no data.
 
 --------------------------------------------------------------------------------------------------------------------
 
