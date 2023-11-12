@@ -1390,9 +1390,9 @@ entries at the top of the list rather than at the bottom.
 
 ### Sorting by Multiple Fields
 
-**Current Implementation**: Currently, the application allows sorting of data by
-a single field at a time using commands such as `c/a` for sorting cycles in
-ascending order or `n/d` for sorting company names in descending order.
+**Current Implementation**: In the current version of our application, the application only allows sorting of internship applications by
+ONE field at a time using parameters such as `c/a` for sorting by cycles in
+ascending order or `n/d` for sorting by company names in descending order.
 
 **Planned Enhancement**: Enable sorting by multiple fields to enhance the
 flexibility of data organization. This improvement addresses the limitation of
