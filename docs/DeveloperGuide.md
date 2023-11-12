@@ -1465,3 +1465,48 @@ applications by enabling users to toggle between app states with ease.
 * **Increased Efficiency**: This enhancement allows users to manage their
   applications more efficiently
   and save time in the event of an unintentional undos.
+
+### Default Sort Order
+
+**Current Implementation**: In the current version of our application, when a
+user sorts by a particular field, there will be no way for the user to revert 
+to the initial sort order. The only way to revert to the default sort order is 
+by restarting the app.
+
+**Planned Enhancement**: We plan to introduce a way for users to revert the list
+to its default sort order. This enhancement may be particularly useful for users
+who which to see the list sorted in the order they added the intern application
+entries in.
+
+**Proposed Changes**:
+
+* **Add new ID field into InternApplication class**: The idea behind this change 
+  is to mimic the identifier key that is present in most SQL databases. This way,
+  we will be able to seamlessly sort the InternApplications according to their ID
+  which is the order in which they are added.
+
+* **New ID Class**: The `Id` class will encapsulate the identifier key integer for
+  the corresponding `InternApplication`.
+  The class will also have a static counter variable to count the total number of
+  intern applications that is added while the app is running. This helps to ensure
+  that none of the `InternApplication` objects has duplicate key values.
+  `Id#generateUseableId()` is a factory method responsible for generating an ID key
+  that is not used by any intern applications yet.
+  It is also worth noting that the Id value will not be passed into the 
+  serialised JSON format as we wish for the keys to be dynamically assigned at every 
+  run of the application. This way, it is unlikely for integer overflow in the Id 
+  value.
+
+* **SortCommand**: The `SortCommand` class will be changed to behave differently 
+  whenever the user enters `sort default` into the CommandBox. The `SortCommandParser` 
+  will see that none of the prefixes are present in the input. After which, it will 
+  check the preamble. If the preamble contains the string "default", the SortCommand 
+  will execute the sort logic to sort by the `Id` class.
+
+**Expected Benefits**:
+
+* **Enhanced Quality of Life**: Users do not have to restart the application just to see
+  their list in the default sorted order.
+* **Improved Usability for New Users**: By providing a way for users to revert their sorted
+  list to the default, it allows them to easily look at the latest entries that they have 
+  added.
