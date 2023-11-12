@@ -1164,33 +1164,37 @@ Expected: The most recent window size and location is retained.
 
 ### Adding an `internApplication`
 
-{description}
+1. Prerequisites: Launch the app
 
-1. Prerequisites: 
+1. Test case: `add n/Optiver r/Quantitative Trader c/Summer 2024`<br>
+   Expected: The `internApplication` is added to the list. 
+   The added internship application is displayed in the select view.
 
-1. Test case: <br>
-   Expected: 
+1. Test case: `add n/Jump Trading r/Quantitative Researcher c/Summer 2024 s/Deleted`<br>
+   Expected: No `internApplication` is added to the list. Error message is displayed.
 
-1. Test case: <br>
-   Expected: 
-
-1. Other incorrect delete commands to try: <br>
-   Expected: 
+1. Other incorrect `add` commands to try: `add`, `add ...`,  where (... are parameters with invalid values or 
+   missing required parameters)<br>
+   Expected: Similar to previous.
 
 ### Editing an `internApplication`
 
-{description}
+1. Prerequisites: List all `internApplication`s using the `list` command.
+   Multiple `internApplication`s in the list.
 
-1. Prerequisites:
+1. Test case: `edit 1 r/Software Engineer c/Summer 2024`<br>
+   Expected: The `internApplication` is edited and the `role` is set to `Software Engineer` and
+   the `cycle` is set to `Summer 2024`. The edited internship application is displayed in the select view.
 
-1. Test case: <br>
-   Expected:
+1. Test case: `edit 0`<br>
+   Expected: No `internApplication` is edited. Error message is displayed.
 
-1. Test case: <br>
-   Expected:
+1. Test case: `edit s/Deleted`<br>
+   Expected: No `internApplication` is edited. Error message is displayed.
 
-1. Other incorrect delete commands to try: <br>
-   Expected:
+1. Other incorrect `edit` commands to try: `edit`, `edit ...`, `edit x` where (... are parameters with invalid values) 
+   and (x is larger than the list size)<br>
+   Expected: Similar to previous.
 
 ### Adding a `note` in an `internApplication`
 
@@ -1204,7 +1208,7 @@ Expected: The most recent window size and location is retained.
 1. Test case: <br>
    Expected:
 
-1. Other incorrect delete commands to try: <br>
+1. Other incorrect `note` commands to try: <br>
    Expected:
 
 ### Deleting a `note` from an `internApplication`
@@ -1219,7 +1223,7 @@ Expected: The most recent window size and location is retained.
 1. Test case: <br>
    Expected:
 
-1. Other incorrect delete commands to try: <br>
+1. Other incorrect `note` commands to try: <br>
    Expected:
 
 ### Viewing an `internApplication`
@@ -1234,7 +1238,7 @@ Expected: The most recent window size and location is retained.
 1. Test case: <br>
    Expected:
 
-1. Other incorrect delete commands to try: <br>
+1. Other incorrect `view` commands to try: <br>
    Expected:
 
 ### Searching for an `internApplication`
@@ -1249,7 +1253,7 @@ Expected: The most recent window size and location is retained.
 1. Test case: <br>
    Expected:
 
-1. Other incorrect delete commands to try: <br>
+1. Other incorrect `find` commands to try: <br>
    Expected:
 
 ### Sorting the `internApplication`s
@@ -1264,23 +1268,23 @@ Expected: The most recent window size and location is retained.
 1. Test case: <br>
    Expected:
 
-1. Other incorrect delete commands to try: <br>
+1. Other incorrect `sort` commands to try: <br>
    Expected:
 
 ### Deleting an `internApplication`
 
 1. Prerequisites: List all `internApplication`s using the `list` command. 
-       Multiple `internApplication`s in the list.
+   Multiple `internApplication`s in the list.
 
 1. Test case: `delete 1`<br>
-       Expected: First intern application is deleted from the list. 
-       Details of the deleted internship application shown in the status message.
+   Expected: First `internApplication` is deleted from the list. 
+   Details of the deleted internship application shown in the status message.
 
 1. Test case: `delete 0`<br>
-       Expected: No `internApplication` is deleted. Error message is displayed
+   Expected: No `internApplication` is deleted. Error message is displayed.
 
-1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
-       Expected: Similar to previous.
+1. Other incorrect `delete` commands to try: `delete`, `delete x` (where x is larger than the list size)<br>
+   Expected: Similar to previous.
 
 ### Saving data
 
