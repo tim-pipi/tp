@@ -1480,12 +1480,12 @@ entries in.
 
 **Proposed Changes**:
 
-* **Add new ID field into InternApplication class**: The idea behind this change 
+* **Add new `Id` field into `InternApplication` class**: The idea behind this change 
   is to mimic the identifier key that is present in most SQL databases. This way,
   we will be able to seamlessly sort the InternApplications according to their ID
   which is the order in which they are added.
 
-* **New ID Class**: The `Id` class will encapsulate the identifier key integer for
+* **New `Id` Class**: The `Id` class will encapsulate the identifier key integer for
   the corresponding `InternApplication`.
   The class will also have a static counter variable to count the total number of
   intern applications that is added while the app is running. This helps to ensure
@@ -1494,7 +1494,7 @@ entries in.
   that is not used by any intern applications yet.
   It is also worth noting that the Id value will not be passed into the 
   serialised JSON format as we wish for the keys to be dynamically assigned at every 
-  run of the application. This way, it is unlikely for integer overflow in the Id 
+  run of the application. This way, it is unlikely for integer overflow in the `Id` 
   value.
 
 * **SortCommand**: The `SortCommand` class will be changed to behave differently 
@@ -1505,7 +1505,7 @@ entries in.
 
 **Expected Benefits**:
 
-* **Enhanced Quality of Life**: Users do not have to restart the application just to see
+* **Enhanced User Experience**: Users do not have to restart the application just to see
   their list in the default sorted order.
 * **Improved Usability for New Users**: By providing a way for users to revert their sorted
   list to the default, it allows them to easily look at the latest entries that they have 
@@ -1547,7 +1547,7 @@ the hassle of deleting a note and re-adding it to keep their notes updated.
 **Expected Benefits**:
 
 * **Faster note management for Users**: Editing notes will be reduced from a two
-  step process (Note deleting and then Note editing) into a one step process 
+  step process (Note deleting and then Note adding) into a one step process 
   (Note editing)
 
 ### Sort Status Enhancement
@@ -1567,12 +1567,12 @@ with no further follow-ups)
   objects. 
 
 * **Status StatusEnum nested class**: We propose to rearrange the enums such that
-  the more important ones are above, and the less important ones are below.
+  the statuses reflect the chronological order in an internship application process.
   The order of importance is as follows: 
-  Offered > Assessment > Interview > Pending > Accepted > Rejected 
+  Pending > Assessment > Interview > Offered > Accepted > Rejected 
 
 **Expected Benefits**:
 
-* **More meaningful sort**: When Status is sorted, it will now show the more urgent
+* **More meaningful sort**: When `Status` is sorted, it will now show the more urgent
   applications to be followed up on to the user either on the top or at the bottom
   depending on whether the user sorted it in ascending or descending order.
