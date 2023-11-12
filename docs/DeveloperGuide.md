@@ -1183,7 +1183,7 @@ Expected: The most recent window size and location is retained.
    Multiple `internApplication`s in the list.
 
 1. Test case: `edit 1 r/Software Engineer c/Summer 2024`<br>
-   Expected: The `internApplication` is edited and the `role` is set to `Software Engineer` and
+   Expected: The first `internApplication` in the list is edited and the `role` is set to `Software Engineer` and
    the `cycle` is set to `Summer 2024`. The edited internship application is displayed in the select view.
 
 1. Test case: `edit 0`<br>
@@ -1192,43 +1192,46 @@ Expected: The most recent window size and location is retained.
 1. Test case: `edit s/Deleted`<br>
    Expected: No `internApplication` is edited. Error message is displayed.
 
-1. Other incorrect `edit` commands to try: `edit`, `edit ...`, `edit x` where (... are parameters with invalid values) 
-   and (x is larger than the list size)<br>
+1. Other incorrect `edit` commands to try: `edit`, `edit ...`, `edit x` where (... are parameters with invalid values 
+   and x is larger than the list size)<br>
    Expected: Similar to previous.
 
 ### Adding a `note` in an `internApplication`
 
-{description}
+1. Prerequisites: List all `internApplication`s using the `list` command.
+   Multiple `internApplication`s in the list.
 
-1. Prerequisites:
+1. Test case: `note 1 i/Prepare for behavioural questions`<br>
+   Expected: A new `note` is added to the first `internApplication` in the list. 
+   The internship application with the new note is displayed in the select view.
 
-1. Test case: <br>
-   Expected:
+1. Test case: `note 0 i/Prepare for machine learning questions`<br>
+   Expected: No `note` is added to any `internApplication`. Error message is displayed.
 
-1. Test case: <br>
-   Expected:
-
-1. Other incorrect `note` commands to try: <br>
-   Expected:
+1. Other incorrect `note` commands to try: `note`, `note x i/Prepare for behavioural questions` where 
+   (x is larger than the list size)<br>
+   Expected: Similar to previous.
 
 ### Deleting a `note` from an `internApplication`
 
-{description}
+1. Prerequisites: List all `internApplication`s using the `list` command.
+   Multiple `internApplication`s in the list.
 
-1. Prerequisites:
+1. Test case: `note 1 o/1`<br>
+   Expected: The first `note` from the first `internApplication` in the list is deleted.
+   The internship application with the deleted note is displayed in the select view.
 
-1. Test case: <br>
-   Expected:
+1. Test case: `note 0 o/1`<br>
+   Expected: No `note` is deleted from any `internApplication`. Error message is displayed.
 
-1. Test case: <br>
-   Expected:
+1. Test case: `note 1 o/0`<br>
+   Expected: No `note` is deleted from any `internApplication`. Error message is displayed.
 
-1. Other incorrect `note` commands to try: <br>
-   Expected:
+1. Other incorrect `note` commands to try: `note`, `note x o/1`, `edit 1 o/y` where (y is larger than the number 
+   of notes in the first `internApplication` in the list and x is larger than the list size)<br>
+   Expected: Similar to previous.
 
 ### Viewing an `internApplication`
-
-{description}
 
 1. Prerequisites:
 
@@ -1243,8 +1246,6 @@ Expected: The most recent window size and location is retained.
 
 ### Searching for an `internApplication`
 
-{description}
-
 1. Prerequisites:
 
 1. Test case: <br>
@@ -1257,8 +1258,6 @@ Expected: The most recent window size and location is retained.
    Expected:
 
 ### Sorting the `internApplication`s
-
-{description}
 
 1. Prerequisites:
 
