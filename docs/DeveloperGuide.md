@@ -1549,3 +1549,30 @@ the hassle of deleting a note and re-adding it to keep their notes updated.
 * **Faster note management for Users**: Editing notes will be reduced from a two
   step process (Note deleting and then Note editing) into a one step process 
   (Note editing)
+
+### Sort Status Enhancement
+
+**Current Implementation**: The current implementation of sorting by status
+results in a behavior where the statuses are sorted in lexicographical order.
+
+**Planned Enhancement**: We plan to change the way Status is sorted to make
+the sort logic more meaningful. (e.g. Rejected and Accepted internships are
+lower than all the other statuses because they are "completed" applications
+with no further follow-ups)
+
+**Proposed Changes**:
+
+* **Status compareTo Method**: Rather than comparing the 2 strings
+  lexicographically, we compare the enum representation of the strings from both
+  objects. 
+
+* **Status StatusEnum nested class**: We propose to rearrange the enums such that
+  the more important ones are above, and the less important ones are below.
+  The order of importance is as follows: 
+  Offered > Assessment > Interview > Pending > Accepted > Rejected 
+
+**Expected Benefits**:
+
+* **More meaningful sort**: When Status is sorted, it will now show the more urgent
+  applications to be followed up on to the user either on the top or at the bottom
+  depending on whether the user sorted it in ascending or descending order.
