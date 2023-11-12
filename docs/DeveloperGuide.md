@@ -1510,3 +1510,42 @@ entries in.
 * **Improved Usability for New Users**: By providing a way for users to revert their sorted
   list to the default, it allows them to easily look at the latest entries that they have 
   added.
+
+### Edit Notes
+
+**Current Implementation**: The current version of our application does not
+support the feature of editing a particular note in the note list. The only
+operations we offer for note management is adding and deleting notes as those
+two are most crucial.
+
+**Planned Enhancement**: We plan to make further enhancements to facilitate
+editing of notes. This feature will be useful for users as it saves them
+the hassle of deleting a note and re-adding it to keep their notes updated.
+
+**Proposed Changes**:
+
+* **New NoteEditCommand Class**: Create a new class called `NoteEditCommand`.
+  Similar to the `NoteInsertCommand` and `NoteDeleteCommand`, the 
+  `NoteEditCommand` will inherit from the `NoteCommand` class and behave in
+  accordance to edit a particular note. The class will require 3 parameters
+  in the constructor: The index of the application, the index of the note, 
+  and the String input note that the user wants to store.
+
+* **Additional function in InternApplication Class**: An additional function
+  is required to represent the behavior that we want in note editing. Namely,
+  `InternApplication#editNote()` will take in 2 parameters: The index of the
+  note, and the string of input note to be stored. The function makes a copy
+  of its immutable list of notes into a mutable one and swaps the `Note` in the 
+  specified index input with a newly constructed `Note` from the input string.
+  The function then returns a new `InternApplication` with the updated notes.
+
+* **NoteCommandParser Changes**: The current version of our app throws an 
+  exception when both `PREFIX_NOTE_DELETE` and `PREFIX_NOTE_INSERT` is detected.
+  The proposed change to make way for note editing is to remove the thrown 
+  exception line in place of a `NoteEditCommand` object.
+
+**Expected Benefits**:
+
+* **Faster note management for Users**: Editing notes will be reduced from a two
+  step process (Note deleting and then Note editing) into a one step process 
+  (Note editing)
