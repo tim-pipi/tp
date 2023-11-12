@@ -1227,26 +1227,28 @@ Expected: The most recent window size and location is retained.
 1. Test case: `note 1 o/0`<br>
    Expected: No `note` is deleted from any `internApplication`. Error message is displayed.
 
-1. Other incorrect `note` commands to try: `note`, `note x o/1`, `edit 1 o/y` where (y is larger than the number 
+1. Other incorrect `note` commands to try: `note`, `note x o/1`, `note 1 o/y` where (y is larger than the number 
    of notes in the first `internApplication` in the list and x is larger than the list size)<br>
    Expected: Similar to previous.
 
 ### Viewing an `internApplication`
 
-1. Prerequisites:
+1. Prerequisites: List all `internApplication`s using the `list` command.
+   Multiple `internApplication`s in the list.
 
-1. Test case: <br>
-   Expected:
+1. Test case: `view 1`<br>
+   Expected: The first `internApplication` in the list is displayed in the select view.
 
-1. Test case: <br>
-   Expected:
+1. Test case: `view 0`<br>
+   Expected: No `internApplication` is displayed in the select view. Error message is displayed.
 
-1. Other incorrect `view` commands to try: <br>
-   Expected:
+1. Other incorrect `view` commands to try: `view`, `view x` (where x is larger than the list size)<br>
+   Expected: Similar to previous.
 
 ### Searching for an `internApplication`
 
-1. Prerequisites:
+1. Prerequisites: List all `internApplication`s using the `list` command.
+   Multiple `internApplication`s in the list.
 
 1. Test case: <br>
    Expected:
@@ -1259,7 +1261,8 @@ Expected: The most recent window size and location is retained.
 
 ### Sorting the `internApplication`s
 
-1. Prerequisites:
+1. Prerequisites: List all `internApplication`s using the `list` command.
+   Multiple `internApplication`s in the list.
 
 1. Test case: <br>
    Expected:
@@ -1284,6 +1287,17 @@ Expected: The most recent window size and location is retained.
 
 1. Other incorrect `delete` commands to try: `delete`, `delete x` (where x is larger than the list size)<br>
    Expected: Similar to previous.
+
+### Undoing a command
+
+1. Prerequisites: Execute some command that modifies any `internApplication` - `add`, `edit`, `note` or `delete`,
+   or modifies the list of internship applications - `find`.
+
+1. Test case: `undo`<br>
+   Expected: Undoes the modification to the `internApplication` and the list of internship applications.
+
+1. Test case: `undo`, without any command being executed before the `undo`<br>
+   Expected: No change to any `internApplication` or the list of internship applications.
 
 ### Saving data
 
