@@ -33,9 +33,9 @@ With _LetsGetHired_, you can benefit from:
 
 In addition to these capabilities, we recognize the importance of **speed and
 efficiency**. Thus, _LetsGetHired_ is
-**optimized for use via a Command Line Interface (CLI)**, but you still enjoy
-the advantages of a Graphical User Interface
-(GUI). If you are a swift typist, _LetsGetHired_ can streamline your internship
+**optimized for use via a [Command Line Interface (CLI)](#glossary)**, 
+but you still enjoy the advantages of a [Graphical User Interface (GUI)](#glossary). 
+If you are a swift typist, _LetsGetHired_ can streamline your internship
 tracking **faster than many standard
 GUI-based tools available.**
 
@@ -64,6 +64,8 @@ Our goal is to make your internship application experience as smooth and
 successful as possible, regardless of your level of experience.
 Let's embark on this journey together and make your internship goals a reality.
 
+[Back to top](#user-guide)
+
 __________________________________________________________________________________________________________________
 
 <div style="page-break-after: always;"></div>
@@ -83,7 +85,7 @@ right side of the page.
 
 If you are using a smaller screen size, the **Page Navigation** will be hidden
 by default. To show it, click on the
-three-dot icon in the top right corner of the page.
+three-dot icon on the top right corner of the page.
 
 ![Page Navigation Icon](images/tutorial/pageNavHide.png)
 
@@ -100,6 +102,8 @@ way too!
 ```
 
 #### Links
+
+What are hyperlinks? [Click here to find out!](#glossary)
 
 [Hyperlinks will be displayed in this format.](#links)
 
@@ -165,19 +169,21 @@ These are some helpful tips. Skip these if you are in a hurry!
 
 </box>
 
-<box type="info" light>
+<box type="tip" light>
 
 These are also some helpful tips. Skip these if you are in a hurry!
 
 </box>
 
-<box type="info" seamless>
+<box type="tip" seamless>
 
 These are also some helpful tips. Skip these if you are in a hurry!
 
 </box>
 
 Now that you are familiar with the User Guide, let's get right into it!
+
+[Back to top](#user-guide)
 
 __________________________________________________________________________________________________________________
 
@@ -224,9 +230,7 @@ ________________________________________________________________________________
    ![Jar File Download](images/tutorial/downloadJar.png)
 
 1. Locate the `letsgethired.jar` file
-    * After downloading, find the `letsgethired.jar` file on your
-      z`computer. It might be in your `Downloads` folder or wherever you chose
-      to save it.
+   * After downloading, find the `letsgethired.jar` file on your computer. It might be in your `Downloads` folder or wherever you chose to save it.
 
 1. Choose Your **Home Folder**
     * Decide on a folder where you want all your **_LetsGetHired_** data to
@@ -253,12 +257,10 @@ ________________________________________________________________________________
 
 ### Launching _LetsGetHired_
 
-1. Open your **Command Terminal**.
-    * On _Windows_: Press `Windows + R` keys simultaneously, type `cmd` and
-      press `Enter`.
-        * Alternatively, press `Windows` key, type `Terminal` and press `Enter`.
-    * On _macOS_: Press `Command + Space` to open Spotlight search,
-      type `Terminal`, and press `Enter`.
+1. Open your **[Command Terminal](#glossary)**.
+    * On _Windows_: Press `Windows + R` keys simultaneously, type `cmd` and press `Enter`. 
+      * Alternatively, press `Windows` key, type `Terminal` and press `Enter`.
+    * On _macOS_: Press `Command + Space` to open Spotlight search, type `Terminal`, and press `Enter`.
 
 1. `cd` into your chosen home folder, and type in the following command:
     ```
@@ -266,19 +268,16 @@ ________________________________________________________________________________
     ```
     <box type="tip" seamless>
 
-   If you are unfamiliar with the commands in the Command Terminal, we suggest
-   reading [this](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands/).
-
+    If you are unfamiliar with the commands in the [Command Terminal](#glossary), we suggest reading [this](https://www.digitalcitizen.life/command-prompt-how-use-basic-commands/).
+    
     </box>
 
-1. You should now see a graphical user interface (GUI) pop up on your screen (as
-   shown in the picture below).
+1. You should now see a [graphical user interface (GUI)](#glossary) pop up on your screen (as shown in the picture below).
 
 <box type="info" light>
 
-Please note that the app comes preloaded with some **sample data**. <br>
-This is to help you get a feel for how the app works and how your entries will
-appear.
+Please note that the app comes preloaded with some **[sample data](#glossary)**. <br>
+This is to help you get a feel for how the app works and how your entries will appear.
 
 </box>
 <br>
@@ -298,14 +297,15 @@ right into managing your
 internship applications in this 
 [**Tutorial**](#tutorial-managing-your-first-internship-application).
 
+[Back to top](#user-guide)
+
 __________________________________________________________________________________________________________________
 
 <div style="page-break-after: always;"></div>
 
 ## **Tutorial - Managing Your First Internship Application**
 
-In this tutorial, we will walk you through a typical workflow for using
-_LetsGetHired_ to manage your internship applications. <br>
+In this tutorial, we will walk you through a typical [workflow](#glossary) for using _LetsGetHired_ to manage your internship applications. <br>
 
 ##### **Step 1: Adding Your Internship Application**
 
@@ -435,6 +435,8 @@ For other commands, please refer to the
 
 </box>
 
+[Back to top](#user-guide)
+
 __________________________________________________________________________________________________________________
 
 <div style="page-break-after: always;"></div>
@@ -456,11 +458,9 @@ the [_Command Summary_ section of the **User Guide**](#command-summary) below.
 
 **Notes about the command format:**<br>
 
-* All commands are case-sensitive. For example sort is a valid command, but SORT
-  or SoRt are invalid commands.<br>
+* All commands are case-sensitive. For example, `sort` is a valid command, but `SORT` or `SoRt` are invalid commands.<br>
 
-* All prefixes are case-sensitive. For example s/ (the prefix for status) and
-  S/ (no attached meaning) are considered different
+* All prefixes are case-sensitive. For example, `s/` (the prefix for status) and `S/` (no attached meaning) are considered different.
 
 * Words in `UPPER_CASE` are **parameters** which you will type in.<br>
     ```
@@ -573,6 +573,8 @@ Upon hitting `Enter`, the application will display the link to this **User Guide
 
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Listing Your Internship Applications: `list`
@@ -627,6 +629,8 @@ the diversity of roles you've applied for, and any impending deadlines.
   to customize the view of your applications based on specific criteria.
 
 </box>
+
+[Back to Command Summary](#command-summary)
 
 __________________________________________________________________________________________________________________
 
@@ -715,6 +719,8 @@ systematically stored, making tracking and follow-ups more manageable.
 
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Editing Your Internship Application : `edit`
@@ -785,9 +791,11 @@ latest changes or corrections you've made.
 
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
-### Adding Notes To Your Internship Application : `note`
+### Managing Notes In Your Internship Application : `note`
 
 The `note` command is a beneficial tool designed to enrich your internship
 applications with **additional details**.
@@ -907,6 +915,8 @@ from the list of notes.
 
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Deleting Your Internship Application : `delete`
@@ -963,6 +973,8 @@ continuous sequence.
   the `undo` command to reverse this command.
   </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Reverting Your Mistake: `undo`
@@ -1009,6 +1021,8 @@ In the example below, the previous `delete` command is undone.
 Once you are at the latest state, _LetsGetHired_ will let you know that there
 are no changes to be undone.
 </box>
+
+[Back to Command Summary](#command-summary)
 
 __________________________________________________________________________________________________________________
 
@@ -1072,6 +1086,8 @@ with that particular application.
   action items or next steps.
 
 </box>
+
+[Back to Command Summary](#command-summary)
 
 __________________________________________________________________________________________________________________
 
@@ -1157,6 +1173,8 @@ you're unsure about the exact details but remember a few keywords.
 
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Sorting Your Internship Applications: `sort`
@@ -1223,6 +1241,8 @@ applications better and not miss any important deadlines.
 
 </box>
 
+[Back to Command Summary](#command-summary)
+
 __________________________________________________________________________________________________________________
 
 ### Clearing Your Internship Applications : `clear`
@@ -1230,10 +1250,8 @@ ________________________________________________________________________________
 The `clear` command provides an efficient way to **erase all internship
 application** records in your database.
 
-It's a complete reset, ensuring you have a clean slate to work with. This
-command can be particularly useful if you've
-been experimenting with sample data or if you want to start fresh for a new
-application cycle.
+It's a complete reset, ensuring you have a clean slate to work with. This command can be particularly useful if you've 
+been experimenting with [sample data](#glossary) or if you want to start fresh for a new application cycle.
 
 ##### Command Usage
 
@@ -1267,12 +1285,11 @@ with your new internship applications.
 
 <box type="tip" light>
 
-* **Recommended Use**: If you've been familiarizing yourself with *
-  *_LetsGetHired_** using sample data, consider using the `clear` command to
-  wipe the slate clean and input your genuine applications.
-* If you accidentally cleared your internship applications list, you can use
-  the `undo` command to reverse this command.
-  </box>
+* **Recommended Use**: If you've been familiarizing yourself with **_LetsGetHired_** using [sample data](#glossary), consider using the `clear` command to wipe the slate clean and input your genuine applications.
+* If you accidentally cleared your internship applications list, you can use the `undo` command to reverse this command.
+</box>
+
+[Back to Command Summary](#command-summary)
 
 __________________________________________________________________________________________________________________
 
@@ -1309,6 +1326,10 @@ application window.
 It ensures that all your data remains intact the next time you launch the
 program.
 
+[Back to Command Summary](#command-summary)
+
+[Back to top](#user-guide)
+
 __________________________________________________________________________________________________________________
 
 ## **Storage**
@@ -1323,10 +1344,8 @@ command that changes the data. There is no need to save manually.
 
 ##### Editing the data file
 
-_LetsGetHired_ data are **saved automatically as a JSON file
-** `[JAR file location]/data/letsgethired.json`.
-If you are an advanced user, you are welcome to update data directly by editing
-that data file.
+_LetsGetHired_ data are **saved automatically as a [JSON](#glossary) file** `[JAR file location]/data/letsgethired.json`. 
+If you are an advanced user, you are welcome to update data directly by editing that data file.
 
 <box type="warning" seamless>
 
@@ -1338,31 +1357,35 @@ before editing it.
 
 </box>
 
+[Back to top](#user-guide)
+
 __________________________________________________________________________________________________________________
 
 <div style="page-break-after: always;"></div>
 
 ## **Command Summary**
 
-| **Command** | **Usage**                                                                                | **Example**                                                                 |
-|-------------|------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| **Help**    | `help`                                                                                   | `help`                                                                      |
-| **List**    | `list`                                                                                   | `list`                                                                      |
-| **Add**     | `add n/COMPANY_NAME r/ROLE c/CYCLE [s/STATUS] [d/DEADLINE]`                              | `add n/Google r/Software Engineering c/Summer 2024 s/Offered d/25 Oct 2023` |
-| **Edit**    | `edit INDEX [n/COMPANY_NAME] [r/ROLE] [c/CYCLE] [s/STATUS] [d/DEADLINE]`                 | `edit 1 n/Apple`                                                            |
-| **Note**    | `note INDEX [i/NOTE]` (to add a note)<br> `note INDEX [o/NOTE_INDEX]` (to delete a note) | `note 1 i/Interview on 26 Oct`<br> `note 1 o/1`                             |
-| **Delete**  | `delete INDEX`                                                                           | `delete 1`                                                                  |
-| **Undo**    | `undo`                                                                                   | `undo`                                                                      |
-| **View**    | `view INDEX`                                                                             | `view 1`                                                                    |
-| **Find**    | `find [n/COMPANY_NAME] [r/ROLE] [c/CYCLE] [s/STATUS] [d/DEADLINE] [i/NOTE]`              | `find n/Google`                                                             |
-| **Sort**    | `sort [n/ORDER] [r/ORDER] [c/ORDER] [s/ORDER] [d/ORDER]`                                 | `sort n/a`                                                                  |
-| **Clear**   | `clear`                                                                                  | `clear`                                                                     |
-| **Exit**    | `exit`                                                                                   | `exit`                                                                      |
+| **Command**                                                     | **Usage**                                                                                | **Example**                                                                 |
+|-----------------------------------------------------------------|------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| **[Help](#viewing-help-help)**                                  | `help`                                                                                   | `help`                                                                      |
+| **[List](#listing-your-internship-applications-list)**          | `list`                                                                                   | `list`                                                                      |
+| **[Add](#adding-your-new-internship-application-add)**          | `add n/COMPANY_NAME r/ROLE c/CYCLE [s/STATUS] [d/DEADLINE]`                              | `add n/Google r/Software Engineering c/Summer 2024 s/Offered d/25 Oct 2023` |
+| **[Edit](#editing-your-internship-application-edit)**           | `edit INDEX [n/COMPANY_NAME] [r/ROLE] [c/CYCLE] [s/STATUS] [d/DEADLINE]`                 | `edit 1 n/Apple`                                                            |
+| **[Note](#managing-notes-in-your-internship-application-note)** | `note INDEX [i/NOTE]` (to add a note)<br> `note INDEX [o/NOTE_INDEX]` (to delete a note) | `note 1 i/Interview on 26 Oct`<br> `note 1 o/1`                             |
+| **[Delete](#deleting-your-internship-application-delete)**      | `delete INDEX`                                                                           | `delete 1`                                                                  |
+| **[Undo](#reverting-your-mistake-undo)**                        | `undo`                                                                                   | `undo`                                                                      |
+| **[View](#viewing-your-internship-application-view)**           | `view INDEX`                                                                             | `view 1`                                                                    |
+| **[Find](#searching-your-internship-application-find)**         | `find [n/COMPANY_NAME] [r/ROLE] [c/CYCLE] [s/STATUS] [d/DEADLINE] [i/NOTE]`              | `find n/Google`                                                             |
+| **[Sort](#sorting-your-internship-applications-sort)**          | `sort [n/ORDER] [r/ORDER] [c/ORDER] [s/ORDER] [d/ORDER]`                                 | `sort n/a`                                                                  |
+| **[Clear](#clearing-your-internship-applications-clear)**       | `clear`                                                                                  | `clear`                                                                     |
+| **[Exit](#exiting-letsgethired-exit)**                          | `exit`                                                                                   | `exit`                                                                      |
 
 This table provides a quick and clear reference to the commands available in *
 *_LetsGetHired_**.
 You can use it to efficiently navigate through the program and manage your
 internship applications.
+
+[Back to top](#user-guide)
 
 __________________________________________________________________________________________________________________
 
@@ -1371,8 +1394,7 @@ ________________________________________________________________________________
 ## **FAQ**
 
 **Q**: How do I know my Java version?<br>
-**A**: Open your command terminal and enter the following command:<br>
-
+**A**: Open your [command terminal](#glossary) and enter the following command:<br>
 ```
 java -version
 ```
@@ -1391,6 +1413,8 @@ ________________________________________________________________________________
   primary screen, the GUI will open off-screen. The remedy is to delete
   the `preferences.json` file created by the application
   before running the application again.
+
+[Back to top](#user-guide)
 
 __________________________________________________________________________________________________________________
 
@@ -1411,3 +1435,5 @@ Here are the definitions of some terms which is used throughout the User Guide.
 | **Command**                           | An input from the user that tells _LetsGetHired_ which action to perform.                                                                                                                |
 | **Parameter**                         | A placeholder used in a command to represent a piece of information that needs to be provided when that command is executed.                                                             |
 | **JSON (JavaScript Object Notation)** | A lightweight data-interchange format that is easy for humans to read and write and easy for machines to parse and generate.                                                             |
+
+[Back to top](#user-guide)
