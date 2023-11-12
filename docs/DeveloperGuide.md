@@ -1271,7 +1271,8 @@ Expected: The most recent window size and location is retained.
 1. Test case: `sort c/n`<br>
    Expected: All the `InternApplication`s are displayed in the list view. Error message is displayed.
 
-1. Other incorrect `sort` commands to try: `sort`, `sort ...`,  where (... are parameters with invalid values)<br>
+1. Other incorrect `sort` commands to try: `sort`, `sort ...`,  where (... are parameters with invalid values
+   or more than one parameter)<br>
    Expected: Similar to previous.
 
 ### Deleting an `InternApplication`

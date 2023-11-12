@@ -47,6 +47,7 @@ Given below are my contributions to the project.
     * Added "must have" use cases to the developer guide [#32](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/32)
     * Added implementation details for `note` command to the developer guide [#95](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/95)
     * Added implementation details for `find` command to the developer guide [#95](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/95)
+    * Added the instructions for manual testing appendix to the developer guide [#213](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/213)
 
 * **Community**:
   * [PRs reviewed by me](https://github.com/AY2324S1-CS2103T-W17-2/tp/pulls?q=is%3Apr+reviewed-by%3AAprupKale) - over 20+ PRs reviewed
