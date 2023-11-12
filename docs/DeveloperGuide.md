@@ -1,7 +1,7 @@
 ---
-  layout: default.md
-  title: "Developer Guide"
-  pageNav: 3
+layout: default.md
+title: "Developer Guide"
+pageNav: 3
 ---
 
 # Developer Guide
@@ -18,9 +18,9 @@ third-party libraries -- include links to the original source as well }_
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Setting up, getting started**
+## **Setting Up and Getting Started**
 
-Refer to the guide [_Setting up and getting started_](SettingUp.md).
+Refer to the [_Setting Up and Getting Started_](SettingUp.md) guide.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -120,7 +120,7 @@ The `UI` component,
 * Depends on certain classes within the `Model` component, as it
   displays `InternApplication` objects residing in the `Model`.
 
-### Logic component
+### Logic Component
 
 **API**:
 [`Logic.java`](https://github.com/AY2324S1-CS2103T-W17-2/tp/blob/master/src/main/java/seedu/letsgethired/logic/Logic.java)
@@ -136,8 +136,8 @@ To illustrate the interactions within the `Logic` component, we'll use the
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `DeleteCommandParser` and `DeleteCommand` 
-should end at the destroy marker (X) but due to a limitation in PlantUML, 
+**Note:** The lifeline for `DeleteCommandParser` and `DeleteCommand`
+should end at the destroy marker (X) but due to a limitation in PlantUML,
 the lifeline extends to the end of the diagram.
 </box>
 
@@ -177,7 +177,7 @@ How commands are parsed:
   the `Parser` interface, allowing them to be treated similarly where possible,
   especially during testing.
 
-### Model component
+### Model Component
 
 **API**:
 [`Model.java`](https://github.com/AY2324S1-CS2103T-W17-2/tp/blob/master/src/main/java/seedu/letsgethired/model/Model.java)
@@ -203,7 +203,7 @@ The `Model` component has the following responsibilities:
   Since the `Model` represents data entities of the domain, it's designed
   to stand independently of the other components.
 
-### Storage component
+### Storage Component
 
 **API**:
 [`Storage.java`](https://github.com/AY2324S1-CS2103T-W17-2/tp/blob/master/src/main/java/seedu/letsgethired/storage/Storage.java)
@@ -220,7 +220,7 @@ The `Storage` component,
 * Depends on some classes in the `Model` component (because the `Storage`
   component's job is to save/retrieve objects that belong to the `Model`).
 
-### Common classes
+### Common Classes
 
 Classes that are used across multiple components are located within the
 `seedu.letsgethired.commons` package.
@@ -237,7 +237,7 @@ commonly used string manipulation methods.
 This section describes some noteworthy details on how certain features are
 implemented.
 
-### Add command
+### Add Command
 
 The `add` command enables users to add new internship application into the
 Intern Tracker.
@@ -295,7 +295,7 @@ application:
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `AddCommandParser` and `AddCommand` 
+**Note:** The lifeline for `AddCommandParser` and `AddCommand`
 should end at the destroy marker (X)
 but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
@@ -315,7 +315,7 @@ but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
     * Cons: It restricts users to having only 1 internship application with a
       given company.
 
-### Find command
+### Find Command
 
 The `find` command enables the users to search internship applications by
 looking up a keyword in any of the fields associated with
@@ -376,13 +376,13 @@ The sequence diagram below shows the process of finding internship applications.
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `FindCommandParser` and `FindCommand` 
+**Note:** The lifeline for `FindCommandParser` and `FindCommand`
 should end at the destroy marker (X)
 but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 </box>
 
-### Note command
+### Note Command
 
 The note command enables the users to add or delete notes to an internship
 application.
@@ -455,7 +455,7 @@ The sequence diagram below shows the process of adding a note:
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `NoteCommandParser` and `NoteInsertCommand` 
+**Note:** The lifeline for `NoteCommandParser` and `NoteInsertCommand`
 should end at the destroy marker (X)
 but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
@@ -511,7 +511,7 @@ The sequence diagram below shows the process of deleting a note.
 
 <box type="info" seamless>
 
-**Note:** The lifeline for `NoteCommandParser` and `NoteDeleteCommand` 
+**Note:** The lifeline for `NoteCommandParser` and `NoteDeleteCommand`
 should end at the destroy marker (X)
 but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
@@ -600,19 +600,7 @@ but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
 **Aspect: How feedback and details are returned from CommandResult**
 
-* **Alternative 1 (current choice):** Separate feedback and details into 2
-  separate strings `feedbackToUser` and `detailsToUser`.
-    * Pros: Clearer and intuitive for future developers to know the content
-      which each string parameter should contain.
-    * Cons: Additional parameters in the arguments might make code look
-      complicated.
-* **Alternative 2:** Have the feedback String contain the content for both
-  feedbackToUser and detailsToUser through parsing.
-    * Pros: Easier to implement.
-    * Cons: Requires future developers working on the code to be mindful of how
-      the String input should be structured for successful parsing
-
-### Undo command
+### Undo Command
 
 #### Implementation
 
@@ -750,37 +738,76 @@ This feature allows the user to click on an `InternApplicationCard` in the
 
 #### Implementation
 
-The Card click mechanism is implemented by creating a new TextArea
-widget beside the `InternApplicationListPanel`
-and a handler function to handle the event of a card click.
+The Card click mechanism is implemented by creating a GridPane beside
+the `InternApplicationListPanel`
+and a listener function to handle the event of a card click. The GridPane
+notably comprises 1 `TextArea` for notes
+and 5 `TextFields` for other details of an Intern Application
 
 The following class is created:
 
-* `SelectView` - This class represents the SelectView Text Area responsible for
-  displaying the details of the card.
+* `SelectView` - This class represents the panel responsible for displaying the
+  details of the card.
 
 The following methods are added:
 
-* `SelectView#displayDetails(String details))` -
-  sets the provided string details as text in the `TextArea`.
-* `Messages#formatDisplay(InternApplication internApplication)` -
-  returns a customised string summarising the details of the `InternApplication`
-* `SelectView#handleCardClick()` - extract the details from the
-  `InternApplication` object and sets them in the `SelectView` widget.
+* `SelectView#displayDetails(InternApplication internApplication))` -
+  sets each details in the intern application in each corresponding `TextField`
+  or `TextArea`.
+* `SelectView#clearDetails()` -
+  clears all contents in the SelectView `TextField` or `TextArea`.
+* `InternApplicationListPanel#setSelectedItemListener()` -
+  adds a listener method to the `ListView` model that calls
+  the `SelectView#displayDetails()` whenever a different
+  item on the list is selected
+* `InternApplicationListPanel#getSelectedItemIndex()` -
+  returns the index of the currently selected item in the ListView
 
-Additionally, the following method is renamed for clarity:
+Given below is an example usage scenario and how the mechanism behaves at each
+step.
 
-* `Messages#format(InternApplication internApplication)` is renamed
-  to `Messages#formatDisplay(InternApplication internApplication)` - returns the
-  feedback from an executed command
+**Step 1.** The user clicks on the intern application card he wants to view.
 
-The following sequence diagram shows how Card Click feature works:
+**Step 2** The ChangeListener that was set into the ListView triggers from the
+event and executes
+a method to execute `view INDEX` where INDEX is the corresponds to the item's
+relative index on the list.
+
+**Step 3.** The `Logic` creates a `CommandResult` object from
+the `ViewCommand#execute()`. The `CommandResult` contains
+a String feedback and `InternApplication` to the user.
+
+**Step 4.** The `InternApplication` in the `CommandResult` is then passed into
+the
+`SelectView#displayDetails(InternApplication internApplication))` where each
+field in the intern application is
+displayed in its respective `TextArea` or `TextField`.
+
+The following sequence diagram high level view of how the Card Click feature
+works:
 
 <puml src="diagrams/SelectViewSequenceDiagram.puml" alt="SelectViewSequenceDiagram"></puml>
- 
+
+#### Design considerations:
+
+**Aspect: What data type should displayDetails take in:**
+
+* **Alternative 1 (current choice):** InternApplication Object.
+    * Pros: Easy to implement. We can just extract individual values from the
+      object without needing to parse a string
+    * Cons: Added dependency of InternApplication in
+      both `InternApplicationListPanel` and `SelectView`
+
+* **Alternative 2:** String containing all field data in the involved
+  InternApplication Object
+    * Pros: Reduce coupling between `InternApplicationList`, `SelectView`,
+      and `InternApplication`
+    * Cons: Requires an additional step of parsing, which makes code much more
+      complex.
+
 --------------------------------------------------------------------------------------------------------------------
 
-## **Documentation, logging, testing, configuration, dev-ops**
+## **Documentation, Testing, Logging, Configuration, Dev-ops**
 
 * [Documentation guide](Documentation.md)
 * [Testing guide](Testing.md)
@@ -1111,7 +1138,7 @@ Use case ends.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Instructions for manual testing**
+## **Appendix: Instructions for Manual Testing**
 
 Given below are instructions to test the app manually.
 
@@ -1185,3 +1212,256 @@ Expected: The most recent window size and location is retained.
        behavior}_
 
 1. _{ more test cases ... }_
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Effort**
+
+In crafting LetsGetHired, a lot of thought was put into delivering a
+user-centric application that
+simplifies internship application tracking. We prioritized user experience with
+a revamped GUI and enhanced
+internship application organization through features like sort and find. We also
+provided users the
+flexibility to attach helpful information to entries, through the introduction
+of notes.
+
+### Designing Organisation Features
+
+Designing organizational features in LetsGetHired, such as the Find and Sort
+commands, presented a notable
+advancement beyond the capabilities of AB3. While AB3 exclusively features a
+basic Find function that
+searches for entries based on matching keywords to names in the address book, in
+LetsGetHired, the Find
+command empowers users to conduct searches across various fields associated with
+internship applications
+simultaneously. Additionally, we took it one step further, enhancing the Find
+command in LetsGetHired
+to accommodate partial matches, giving our users more flexibility and freedom.
+
+The introduction of the Sort command in LetsGetHired stands as another milestone
+in organizational design.
+LetsGetHired enables users to sort their internship applications in ascending or
+descending
+order based on any field. This functionality provides users with the ability to
+customize the
+organization of their application.
+
+### Developing a Better User Interface
+
+We undertook a substantial overhaul of the GUI in LetsGetHired, distinguishing
+it from the interface of
+AB3. LetsGetHired embraces a visually appealing GUI that facilitates in-depth
+exploration of application
+details through a select view. This transition required intricate design
+decisions to seamlessly integrate
+additional functionalities for detailed application viewing and adding of notes
+that demand larger screen
+real estate. In our commitment to user experience, we also interactivity with
+the GUI through an ability
+to view applications from the list view by clicking on the corresponding card.
+
+### Designing Notes Functionality
+
+Notes play an integral part in LetsGetHired, allowing users to add many pieces
+of information associated
+with an internship application. We deliberated on how notes should be created,
+viewed, deleted and integrated
+into LetsGetHired's existing and future functionalities, such as searching for
+an application by notes.
+This addition allowed us to introduce another dimension to LetsGetHired, adding
+depth and nuance to the
+application management experience.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Planned Enhancements**
+
+### Improved Command Error Feedback
+
+**Current Implementation**: In the current version of our application, when a
+user inputs a command with missing compulsory fields, the application responds
+with a generic error message: `Invalid Command Format!`. This is followed by the
+correct usage of the command. While this approach informs the user of an error,
+it lacks specificity in identifying the exact cause of the error, particularly
+which compulsory field(s) are missing.
+
+**Planned Enhancement**: We aim to improve user experience and error feedback by
+implementing a more detailed error reporting system. This enhancement will
+enable the application to not only detect that an invalid command has been
+entered but also identify and highlight the specific missing compulsory fields.
+
+**Proposed Changes**:
+
+* **Error Detection Algorithm**: Modify the command parsing algorithm to include
+  checks for each compulsory field. This will enable the system to pinpoint
+  which field(s) the user failed to provide.
+
+* **User Feedback Enhancement**: When a command is identified as invalid due to
+  missing fields, the application will generate a tailored error message. This
+  message will specifically list the missing compulsory field(s), guiding the
+  user to correct the specific mistake. For example, if a user forgets to input
+  the `CYCLE` field in a command, the error message would
+  be: `Invalid Command Format! Missing field: CYCLE`. This message will be
+  followed by the correct usage of the command.
+
+**Expected Benefits**:
+
+* **Improved User Experience**: By providing specific feedback on missing
+  fields, users can more easily understand and rectify their mistakes, leading
+  to a smoother interaction with the application.
+* **Increased Efficiency**: This enhancement reduces the time and effort users
+  spend in deciphering generic error messages and figuring out what went wrong.
+* **Enhanced Usability**: Tailored error messages make the application more
+  user-friendly, especially for new users who are still familiarizing themselves
+  with the command syntax.
+
+### Improved Unknown Command Error Feedback
+
+**Current Implementation**: In the current version of our application, when a
+user inputs an unrecognized command, the system simply displays a
+message: `Unknown Command`. This response, while accurate, does not assist the
+user in understanding why the command was unrecognized or how to correct it.
+
+**Planned Enhancement**: We plan to introduce a more intuitive error handling
+mechanism for unknown commands, akin to the approach used in Git. This
+enhancement will involve suggesting commands similar to the user's input, which
+can be particularly useful in cases where the user has made a typing error.
+
+**Proposed Changes**:
+
+* **Command Suggestion Algorithm**: Implement an algorithm that detects and
+  suggests similar commands when an unknown command is entered. For example, if
+  a user mistakenly types `ad` instead of `add`, the system will suggest the
+  correct command: `Unknown Command: 'ad'. Did you mean 'add'?`.
+
+* **Synonym Recognition**: Enhance the command parsing logic to recognize
+  synonyms or commonly used alternatives for certain commands. For instance, if
+  a user types `search` or `filter` instead of `find`, the application could
+  respond with a suggestion: `Unknown Command: 'search'. Do you mean 'find'?`.
+
+**Expected Benefits**:
+
+* **Enhanced User Assistance**: By providing relevant command suggestions, users
+  can quickly rectify typing errors or understand alternative terminology used
+  within the application.
+* **Increased Efficiency**: This enhancement reduces the time and effort users
+  spend in deciphering generic error messages and figuring out what went wrong.
+* **Improved Usability for New Users**: New users, unfamiliar with specific
+  command syntax, will find the application more approachable with these
+  intuitive prompts and suggestions.
+
+### Improved Visibility of Newly Added Internship Applications
+
+**Current Implementation**: In the current version of our application, when a
+new internship application is added to our list, it is placed at the bottom.
+This positioning often renders the new entry outside the user's current view,
+requiring them to manually scroll down to locate the latest addition.
+
+**Planned Enhancement**: We are planning to enhance the user experience by
+changing how newly added internship applications are displayed. The key
+improvement will be automatically scrolling the list to bring the newly added
+application into view immediately. Additionally, we are considering placing new
+entries at the top of the list rather than at the bottom.
+
+**Proposed Changes**:
+
+* **Automatic Scrolling**: Modify the list view functionality to automatically
+  scroll to the position of the newly added internship application. This ensures
+  that the latest entry is immediately visible to the user without requiring
+  manual navigation.
+
+* **List Ordering Modification**: Change the default order of the list to
+  display new applications at the top. This approach aligns with common user
+  expectations, where the most recent items are readily accessible.
+
+**Expected Benefits**:
+
+* **Improved Visibility of New Applications**: By immediately showcasing new
+  applications, users can immediately see and interact with the most recent
+  entries, improving workflow efficiency.
+* **Adaptation to User Preferences**: Adjusting the list order to display new
+  items at the top aligns with common user behavior and expectations, thereby
+  improving usability.
+* **Enhanced User Experience**: Automatically scrolling to new entries saves
+  time and improves the overall user experience, making the application more
+  intuitive and efficient.
+
+### Sorting by Multiple Fields
+
+**Current Implementation**: In the current version of our application, the
+application only allows sorting of internship applications by
+ONE field at a time using parameters such as `c/a` for sorting by cycles in
+ascending order or `n/d` for sorting by company names in descending order.
+
+**Planned Enhancement**: Enable sorting by multiple fields to enhance the
+flexibility of data organization. This improvement addresses the limitation of
+the current sorting functionality, allowing users to sort data by more than one
+criterion at a time. For example, users should be able to sort first by cycle in
+ascending order and then by company name in ascending order using the following
+command:
+
+```shell
+sort c/a n/a
+```
+
+This means that if 2 internship applications have the same cycle, for example
+`Summer 2024`, they will be sorted by company name in ascending order
+(`Apple` before `Google`).
+
+**Proposed Changes**:
+
+<box type="info" seamless>
+
+**Note:** The `InternApplicationComparator` class already contains a
+`createCompositeComparator()` method that can be used to combine multiple
+`InternApplication` comparators into a single comparator.
+</box>
+
+- Update `ArgumentTokenizer` to parse the order of prefixes.
+- Update `SortCommandParser` to allow for multiple sorting criteria.
+
+**Expected Benefits**:
+
+- Users can organise internship applications more precisely by specifying
+  multiple sorting criteria.
+- Enhanced user experience with the ability to customise internship application
+  sorting based on specific needs.
+- Improved usability for users who require complex sorting for internship
+  application analysis.
+
+### Enhanced Version Control: Redo
+
+**Current Implementation**: In the current version of our application, users are
+able to undo changes made
+using the Undo command. This allows users to revert formerly destructive
+commands, for a more forgiving and
+beginner-friendly experience. We see a redo function as a natural progression
+from undo, where users will be
+given greater agency in managing their internship applications.
+
+**Planned Enhancement**: We plan to implement a Redo command that will allow
+users to redo commands that
+were undone. This change empowers users to have greater flexibility in managing
+their internship
+applications by enabling users to toggle between app states with ease.
+
+**Proposed Changes**:
+
+* **Undone States History**: Store undone states in a separate history, similar
+  to how past states are
+  stored currently.
+
+* **Redo Command** : Introduce a new command : Redo, that will redo a command
+  that was previously undone
+  or notify the user that there are no commands to redo.
+
+**Expected Benefits**:
+
+* **Improved Beginner Experience**: By providing the option to redo, new users
+  can have an easier time
+  exploring commands and undoing and redoing changes when necessary.
+* **Increased Efficiency**: This enhancement allows users to manage their
+  applications more efficiently
+  and save time in the event of an unintentional undos.
