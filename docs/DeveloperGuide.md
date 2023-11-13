@@ -11,6 +11,8 @@ pageNav: 3
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## **Acknowledgements**
 
 [Back to top](#developer-guide)
@@ -24,6 +26,8 @@ Refer to the [_Setting Up and Getting Started_](SettingUp.md) guide.
 [Back to top](#developer-guide)
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Design**
 
@@ -237,6 +241,8 @@ commonly used string manipulation methods.
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## **Noteworthy Feature Implementations**
 
 This section describes some noteworthy details on how certain features are
@@ -264,7 +270,7 @@ behaves at each step.
 add n/Jane Street r/Full Stack Developer c/Summer 2024
 ```
 
-This [command](#glossary) adds a new `InternshipApplication` into the `InternTracker`.
+This [command](#glossary) adds a new `InternApplication` into the `InternTracker`.
 
 <box type="info" seamless>
 
@@ -329,7 +335,7 @@ an internship application.
 
 #### Implementation
 
-Performing a `Find` operation involves executing the `FindCommand.
+Performing a `Find` operation involves executing the `FindCommand`.
 
 * The `FindCommand` is parsed by the `FindCommandParser`.
 * `FindCommandParser#parse()` parses the user input to return a `FindCommand`
@@ -406,10 +412,10 @@ From the above class diagram, the `NoteCommand` is an abstract class that is
 inherited by the `NoteInsertCommand` class
 and the `NoteDeleteCommand` class. This is done so that
 the `NoteCommand#execute()` method can behave accordingly while
-still having both `NoteCommand` classes share the [command](#glossary) word that is 'note'.
+still having both `NoteCommand` classes share the [command](#glossary) word that is `note`.
 
 The `NoteCommand` is parsed by
-the `NoteCommandParser`.`NoteCommandParser#parse()` parses the user input to
+the `NoteCommandParser`. `NoteCommandParser#parse()` parses the user input to
 return
 either a `NoteInsertCommand` or a `NoteDeleteCommand` object that will be
 executed.
@@ -443,7 +449,7 @@ object ready to be added into `Model`
 
 **Step 3.** The `NoteCommand#execute()` method is invoked by the `LogicManager`.
 The `NoteCommand#execute()`
-method creates a new `InternshipApplication` with the note appended to its
+method creates a new `InternApplication` with the note appended to its
 `ArrayList` of notes.
 
 **Step 4.** The `NoteCommand` calls the `Model#setInternApplication()`
@@ -501,7 +507,7 @@ object to be deleted from the `Model`.
 
 **Step 3.** The `NoteCommand#execute()` method is called by the `LogicManager`.
 The `NoteCommand#execute()`
-method creates a new `InternshipApplication` with the corresponding note removed
+method creates a new `InternApplication` with the corresponding note removed
 from its `ArrayList` of notes.
 
 **Step 4.** The `NoteCommand` calls the `Model#setInternApplication()`
@@ -544,7 +550,7 @@ To introduce the `sort` feature, we make the following changes to the codebase:
 
 1. **Extension of the Model Interface**: We enhance the `Model` interface to
    include a new method:
-    * `Model#updateFilteredSortedInternApplicationList(Comparator<InternApplication> comparator))`
+    * `Model#updateFilteredSortedInternApplicationList(Comparator<InternApplication> comparator)`
     * This method sorts the intern application list by the given comparator.
 
 2. **ModelManager Enhancements**: In the `ModelManager` class, we wrap the
@@ -553,7 +559,7 @@ To introduce the `sort` feature, we make the following changes to the codebase:
    This new field, allows us to sort the intern applications to be displayed
    based on the specified comparator.
 
-3. **Update existing methods:
+3. **Update existing methods**:
     * `Model#getFilteredInternApplicationList()` is updated to return
       the filtered and/or sorted intern application list.
 
@@ -608,8 +614,6 @@ but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
       operations, which makes it easier to test for equality.
     * Allows us to strictly define which comparators are allowed.
 
-**Aspect: How feedback and details are returned from CommandResult**
-
 ### Undo Command
 
 #### Implementation
@@ -625,7 +629,7 @@ Additionally, it implements the following operations:
 * `VersionedInternTracker#undo()`— Restores the previous intern tracker state
   from its history.
 
-VersionedInternTracker#undo() is exposed in the `Model` interface
+`VersionedInternTracker#undo()` is exposed in the `Model` interface
 as `Model#undoAction()`.
 
 Given below is an example usage scenario and how the undo mechanism behaves at
@@ -637,7 +641,7 @@ The `VersionedInternTracker` will be initialized with an empty `savedStates`.
 <puml src="diagrams/UndoState0.puml" alt="UndoState0"></puml>
 
 **Step 2.** The user executes `delete 5` [command](#glossary) to delete the 5th
-internApplication
+`internApplication`
 from the intern tracker.
 The `delete` [command](#glossary) calls `Model#deleteInternApplication()`, which
 calls `VersionedInternTracker#commit()`,
@@ -667,13 +671,13 @@ before executing the add action.
 
 </box>
 
-**Step 4.** The user now decides that adding the internApplication was a
+**Step 4.** The user now decides that adding the `internApplication` was a
 mistake,
 and decides to undo that action
 by executing the `undo` [command](#glossary). The `undo` [command](#glossary) will
 call `Model#undoAction()`, which pops the latest
 `internApplications` state from `savedStates` and assigns it to the current
-internApplications.
+`internApplications`.
 
 <puml src="diagrams/UndoState3.puml" alt="UndoState3"></puml>
 
@@ -682,7 +686,7 @@ internApplications.
 
 **Note:** If the size of `savedStates` is 0, meaning the stack is empty, then
 there are no previous
-internApplications states to restore. The `undo` [command](#glossary)
+`internApplications` states to restore. The `undo` [command](#glossary)
 calls `VersionedInternTracker#undo()`, which returns
 False if there are no states to restore, and displays a message to the user that
 the latest change has already been reached.
@@ -704,10 +708,10 @@ but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 do
 not modify the intern tracker,
 such as `list`, will usually not
-call `VersionedInternTracker.commit()`, `Model#undoAction()`
+call `VersionedInternTracker#commit()`, `Model#undoAction()`
 Thus, the `savedStates` remains unchanged.
 
-<puml src="diagrams/UndoState4.puml" alt="UndoState4" />
+<puml src="diagrams/UndoState4.puml" alt="UndoState4"></puml>
 
 The following activity diagram summarizes what happens when a user executes a
 new [command](#glossary):
@@ -749,11 +753,11 @@ This feature allows the user to click on an `InternApplicationCard` in the
 
 #### Implementation
 
-The Card click mechanism is implemented by creating a GridPane beside
+The Card click mechanism is implemented by creating a `GridPane` beside
 the `InternApplicationListPanel`
-and a listener function to handle the event of a card click. The GridPane
+and a listener function to handle the event of a card click. The `GridPane`
 notably comprises 1 `TextArea` for notes
-and 5 `TextFields` for other details of an Intern Application
+and 5 `TextField`s for other details of an Intern Application
 
 The following class is created:
 
@@ -766,22 +770,23 @@ The following methods are added:
   sets each details in the intern application in each corresponding `TextField`
   or `TextArea`.
 * `SelectView#clearDetails()` -
-  clears all contents in the SelectView `TextField` or `TextArea`.
+  clears all contents in the `SelectView`'s `TextField` or `TextArea`.
 * `InternApplicationListPanel#setSelectedItemListener()` -
   adds a listener method to the `ListView` model that calls
-  the `SelectView#displayDetails()` whenever a different
+  the `SelectView#displayDetails(InternApplication internApplication)` 
+  whenever a different
   item on the list is selected
 * `InternApplicationListPanel#getSelectedItemIndex()` -
-  returns the index of the currently selected item in the ListView
+  returns the index of the currently selected item in the `ListView`
 
 Given below is an example usage scenario and how the mechanism behaves at each
 step.
 
 **Step 1.** The user clicks on the intern application card he wants to view.
 
-**Step 2** The ChangeListener that was set into the ListView triggers from the
+**Step 2** The `ChangeListener` that was set into the `ListView` triggers from the
 event and executes
-a method to execute `view INDEX` where INDEX is the corresponds to the item's
+a method to execute `view INDEX` where `INDEX` is the corresponds to the item's
 relative index on the list.
 
 **Step 3.** The `Logic` creates a `CommandResult` object from
@@ -799,18 +804,26 @@ works:
 
 <puml src="diagrams/SelectViewSequenceDiagram.puml" alt="SelectViewSequenceDiagram"></puml>
 
+<box type="info" seamless>
+
+**Note:** The `internApplication` object is present in the `CommandResult`.
+The method call to obtain the `internApplication` object has been omitted for
+brevity.
+
+</box>
+
 #### Design considerations:
 
-**Aspect: What data type should displayDetails take in:**
+**Aspect: What data type should `displayDetails` take in:**
 
-* **Alternative 1 (current choice):** InternApplication Object.
+* **Alternative 1 (current choice):** `InternApplication` Object.
     * Pros: Easy to implement. We can just extract individual values from the
       object without needing to parse a string
-    * Cons: Added dependency of InternApplication in
+    * Cons: Added dependency of `InternApplication` in
       both `InternApplicationListPanel` and `SelectView`
 
 * **Alternative 2:** String containing all field data in the involved
-  InternApplication Object
+  `InternApplication` Object
     * Pros: Reduce coupling between `InternApplicationList`, `SelectView`,
       and `InternApplication`
     * Cons: Requires an additional step of parsing, which makes code much more
@@ -819,6 +832,8 @@ works:
 [Back to top](#developer-guide)
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Documentation, Testing, Logging, Configuration, Dev-ops**
 
@@ -852,6 +867,8 @@ Here are the definitions of some terms which is used throughout the User Guide a
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## **Appendix: Requirements**
 
 ### Product scope
@@ -871,8 +888,8 @@ its progress, optimized for users who prefer a [CLI](#glossary)
 
 ### User stories
 
-Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (
-unlikely to have) - `*`
+Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low 
+(unlikely to have) - `*`
 
 | Priority | As a ...                    | I want to ...                                                | So that I can...                                                        |
 |----------|-----------------------------|--------------------------------------------------------------|-------------------------------------------------------------------------|
@@ -934,7 +951,7 @@ and the **Actor** is the `User`, unless specified otherwise)
 
 1. User requests to <ins>list all internship applications (UC2)</ins>
 2. User requests to view a specific internship application.
-3. LetsGetHired displays the required internship application.
+3. LetsGetHired displays the specified internship application.
 
    Use case ends.
 
@@ -962,7 +979,7 @@ and the **Actor** is the `User`, unless specified otherwise)
 
 1. User requests to <ins>list all internship applications (UC2)</ins>.
 2. User requests to delete a specific internship application.
-3. LetsGetHired deletes the required internship application.
+3. LetsGetHired deletes the specified internship application.
 
    Use case ends.
 
@@ -989,7 +1006,11 @@ and the **Actor** is the `User`, unless specified otherwise)
 **MSS**
 
 1. User requests for a search by specific criteria.
-2. LetsGetHired shows a list of matching applications
+2. LetsGetHired shows a list of matching applications.
+
+   Use case ends.
+
+**Extensions**
 
 * 1a. The [command](#glossary) format is incorrect.
 
@@ -1138,6 +1159,8 @@ and the **Actor** is the `User`, unless specified otherwise)
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## **Appendix: Instructions for Manual Testing**
 
 Given below are instructions to test the app manually.
@@ -1163,7 +1186,7 @@ java -jar letsgethired.jar
 ```
 
 Expected: Shows the [GUI](#glossary) with a set of sample
-internship applications. The window size may not be optimum.
+internship applications. The window size may not be optimal.
 
 **Saving window preferences**
 
@@ -1190,7 +1213,7 @@ Expected: The most recent window size and location is retained.
 1. Test case: `add n/Jump Trading r/Quantitative Researcher c/Summer 2024 s/Deleted`<br>
    Expected: No `InternApplication` is added to the list. Error message is displayed.
 
-1. Other incorrect `add` commands to try: `add`, `add ...`,  where (... are parameters with invalid values or 
+1. Other incorrect `add` commands to try: `add`, `add ...`,  where (`...` are parameters with invalid values or 
    missing required parameters)<br>
    Expected: Similar to previous.
 
@@ -1200,8 +1223,8 @@ Expected: The most recent window size and location is retained.
    Multiple `InternApplication`s in the list.
 
 1. Test case: `edit 1 r/Software Engineer c/Summer 2024`<br>
-   Expected: The first `InternApplication` in the list is edited and the `role` is set to `Software Engineer` and
-   the `cycle` is set to `Summer 2024`. The edited internship application is displayed in the select view.
+   Expected: The first `InternApplication` in the list is edited and the `Role` is set to `Software Engineer` and
+   the `Cycle` is set to `Summer 2024`. The edited internship application is displayed in the select view.
 
 1. Test case: `edit 0`<br>
    Expected: No `InternApplication` is edited. Error message is displayed.
@@ -1209,8 +1232,8 @@ Expected: The most recent window size and location is retained.
 1. Test case: `edit s/Deleted`<br>
    Expected: No `InternApplication` is edited. Error message is displayed.
 
-1. Other incorrect `edit` commands to try: `edit`, `edit ...`, `edit x` where (... are parameters with invalid values 
-   and x is larger than the list size)<br>
+1. Other incorrect `edit` commands to try: `edit`, `edit ...`, `edit x` where (`...` are parameters with invalid values 
+   and `x` is larger than the list size)<br>
    Expected: Similar to previous.
 
 ### Adding a `note` in an `InternApplication`
@@ -1219,14 +1242,14 @@ Expected: The most recent window size and location is retained.
    Multiple `InternApplication`s in the list.
 
 1. Test case: `note 1 i/Prepare for behavioural questions`<br>
-   Expected: A new `note` is added to the first `InternApplication` in the list. 
+   Expected: A new `Note` is added to the first `InternApplication` in the list. 
    The internship application with the new note is displayed in the select view.
 
 1. Test case: `note 0 i/Prepare for machine learning questions`<br>
-   Expected: No `note` is added to any `InternApplication`. Error message is displayed.
+   Expected: No `Note` is added to any `InternApplication`. Error message is displayed.
 
 1. Other incorrect `note` commands to try: `note`, `note x i/Prepare for behavioural questions` where 
-   (x is larger than the list size)<br>
+   (`x` is larger than the list size)<br>
    Expected: Similar to previous.
 
 ### Deleting a `note` from an `InternApplication`
@@ -1235,17 +1258,17 @@ Expected: The most recent window size and location is retained.
    Multiple `InternApplication`s in the list.
 
 1. Test case: `note 1 o/1`<br>
-   Expected: The first `note` from the first `InternApplication` in the list is deleted.
+   Expected: The first `Note` from the first `InternApplication` in the list is deleted.
    The internship application with the deleted note is displayed in the select view.
 
 1. Test case: `note 0 o/1`<br>
-   Expected: No `note` is deleted from any `InternApplication`. Error message is displayed.
+   Expected: No `Note` is deleted from any `InternApplication`. Error message is displayed.
 
 1. Test case: `note 1 o/0`<br>
-   Expected: No `note` is deleted from any `InternApplication`. Error message is displayed.
+   Expected: No `Note` is deleted from any `InternApplication`. Error message is displayed.
 
-1. Other incorrect `note` commands to try: `note`, `note x o/1`, `note 1 o/y` where (y is larger than the number 
-   of notes in the first `InternApplication` in the list and x is larger than the list size)<br>
+1. Other incorrect `note` commands to try: `note`, `note x o/1`, `note 1 o/y` where (`y` is larger than the number 
+   of notes in the first `InternApplication` in the list and `x` is larger than the list size)<br>
    Expected: Similar to previous.
 
 ### Viewing an `InternApplication`
@@ -1259,7 +1282,7 @@ Expected: The most recent window size and location is retained.
 1. Test case: `view 0`<br>
    Expected: No `InternApplication` is displayed in the select view. Error message is displayed.
 
-1. Other incorrect `view` commands to try: `view`, `view x` (where x is larger than the list size)<br>
+1. Other incorrect `view` commands to try: `view`, `view x` (where `x` is larger than the list size)<br>
    Expected: Similar to previous.
 
 ### Searching for an `InternApplication`
@@ -1268,8 +1291,8 @@ Expected: The most recent window size and location is retained.
    Multiple `InternApplication`s in the list.
 
 1. Test case: `find n/Jane Street c/Summer 2024 r/Software Engineer`<br>
-   Expected: All the `InternApplication`s with either the `company` name containing `Jane Street` or `role` 
-   containing `Software Engineer` or `cycle` containing `Summer 2024` are displayed in the list view.
+   Expected: All the `InternApplication`s with either the `Company` name containing `Jane Street` *and* `Role` 
+   containing `Software Engineer` *and* `Cycle` containing `Summer 2024` are displayed in the list view.
 
 1. Test case: `find`<br>
    Expected: All `InternApplication`s are displayed in the list view. Error message is displayed.
@@ -1280,15 +1303,15 @@ Expected: The most recent window size and location is retained.
    Multiple `InternApplication`s in the list.
 
 1. Test case: `sort n/a`<br>
-   Expected: All the `InternApplication`s are displayed in the list view in sorted order by `name` in ascending order.
+   Expected: All the `InternApplication`s are displayed in the list view in sorted order by `Company` in ascending order.
 
 1. Test case: `sort s/d`<br>
-   Expected: All the `InternApplication`s are displayed in the list view in sorted order by `status` in descending order.
+   Expected: All the `InternApplication`s are displayed in the list view in sorted order by `Status` in descending order.
 
 1. Test case: `sort c/n`<br>
    Expected: All the `InternApplication`s are displayed in the list view. Error message is displayed.
 
-1. Other incorrect `sort` commands to try: `sort`, `sort ...`,  where (... are parameters with invalid values
+1. Other incorrect `sort` commands to try: `sort`, `sort ...`,  where (`...` are parameters with invalid values
    or more than one parameter)<br>
    Expected: Similar to previous.
 
@@ -1304,7 +1327,7 @@ Expected: The most recent window size and location is retained.
 1. Test case: `delete 0`<br>
    Expected: No `InternApplication` is deleted. Error message is displayed.
 
-1. Other incorrect `delete` commands to try: `delete`, `delete x` (where x is larger than the list size)<br>
+1. Other incorrect `delete` commands to try: `delete`, `delete x` (where `x` is larger than the list size)<br>
    Expected: Similar to previous.
 
 ### Undoing a command
@@ -1338,7 +1361,7 @@ Dealing with a **missing data file** (`letsgethired.json`)
 
 1. Test case: If you do not run any command and quit the app, no data file will be generated.
 
-Dealing with a **corrupted data file** (`letsgehired.json`)
+Dealing with a **corrupted data file** (`letsgethired.json`)
 
 1. Prerequisites: On app launch, if the `letsgethired.json` file in the data folder within the same directory as the jar file is corrupted.
 
@@ -1347,6 +1370,8 @@ Dealing with a **corrupted data file** (`letsgehired.json`)
 [Back to top](#developer-guide)
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Appendix: Effort**
 
@@ -1410,6 +1435,8 @@ application management experience.
 [Back to top](#developer-guide)
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Appendix: Planned Enhancements**
 
@@ -1659,7 +1686,7 @@ the hassle of deleting a note and re-adding it to keep their notes updated.
 
 **Proposed Changes**:
 
-* **New NoteEditCommand Class**: Create a new class called `NoteEditCommand`.
+* **New `NoteEditCommand` Class**: Create a new class called `NoteEditCommand`.
   Similar to the `NoteInsertCommand` and `NoteDeleteCommand`, the 
   `NoteEditCommand` will inherit from the `NoteCommand` class and behave in
   accordance to edit a particular note. The class will require 3 parameters
@@ -1697,11 +1724,11 @@ with no further follow-ups)
 
 **Proposed Changes**:
 
-* **Status compareTo Method**: Rather than comparing the 2 strings
+* **Status `compareTo` Method**: Rather than comparing the 2 strings
   lexicographically, we compare the enum representation of the strings from both
   objects. 
 
-* **Status StatusEnum nested class**: We propose to rearrange the enums such that
+* **Status `StatusEnum` nested class**: We propose to rearrange the enums such that
   the statuses reflect the chronological order in an internship application process.
   The order of importance is as follows: 
   Pending > Assessment > Interview > Offered > Accepted > Rejected 
@@ -1711,3 +1738,5 @@ with no further follow-ups)
 * **More meaningful sort**: When `Status` is sorted, it will now show the more urgent
   applications to be followed up on to the user either on the top or at the bottom
   depending on whether the user sorted it in ascending or descending order.
+
+[Back to top](#developer-guide)
