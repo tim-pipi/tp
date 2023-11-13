@@ -1422,7 +1422,7 @@ ________________________________________________________________________________
 
 ## **Glossary**
 
-Here are the definitions of some terms which is used throughout the User Guide.
+Here are the definitions of some terms which is used throughout the User Guide and Developer Guide.
 
 | Term                                  | Definition                                                                                                                                                                               |
 |---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
