@@ -140,6 +140,8 @@ To illustrate the interactions within the `Logic` component, we'll use the
 **Note:** The lifeline for `DeleteCommandParser` and `DeleteCommand`
 should end at the destroy marker (X) but due to a limitation in PlantUML,
 the lifeline extends to the end of the diagram.
+
+The creation of the `internApplication` object has been omitted for brevity.
 </box>
 
 How the `Logic` component works:
@@ -302,6 +304,7 @@ application:
 should end at the destroy marker (X)
 but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
+The creation of the `internApplication` object has been omitted for brevity.
 </box>
 
 #### Design Considerations
@@ -462,6 +465,8 @@ The sequence diagram below shows the process of adding a note:
 should end at the destroy marker (X)
 but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
+The creation of the `internApp` and `internAppToEdit` objects have 
+been omitted for brevity.
 </box>
 
 ---
@@ -518,6 +523,8 @@ The sequence diagram below shows the process of deleting a note.
 should end at the destroy marker (X)
 but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 
+The creation of the `internApp` and `internAppToEdit` objects have
+been omitted for brevity.
 </box>
 
 ### Sort Command
