@@ -56,19 +56,15 @@ Given below are my contributions to the project.
       storage [#108](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/108)
 
 * **Documentation**:
-    * User Guide:
-        * Updated user guide for `note` command after implementing it
-        * Updated user guide for `find` command after improving
-          it [#82](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/82)
-    * Developer Guide:
-        * Added "must have" user stories to the developer
-          guide [#32](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/32)
-        * Added "must have" use cases to the developer
-          guide [#32](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/32)
-        * Added implementation details for `note` command to the developer
-          guide [#95](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/95)
-        * Added implementation details for `find` command to the developer
-          guide [#95](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/95)
+  * User Guide:
+    * Updated user guide for `note` command after implementing it
+    * Updated user guide for `find` command after improving it [#82](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/82)
+  * Developer Guide:
+    * Added "must have" user stories to the developer guide [#32](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/32)
+    * Added "must have" use cases to the developer guide [#32](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/32)
+    * Added implementation details for `note` command to the developer guide [#95](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/95)
+    * Added implementation details for `find` command to the developer guide [#95](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/95)
+    * Added the instructions for manual testing appendix to the developer guide [#213](https://github.com/AY2324S1-CS2103T-W17-2/tp/pull/213)
 
 * **Community**:
     * [PRs reviewed by me](https://github.com/AY2324S1-CS2103T-W17-2/tp/pulls?q=is%3Apr+reviewed-by%3AAprupKale) -
