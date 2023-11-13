@@ -312,8 +312,7 @@ In this tutorial, we will walk you through a typical [workflow](#glossary) for u
 **Context:** You are starting your internship application journey, and you want
 to add a new internship application.
 
-Imagine that you have applied for a **Software Engineering Internship** at *
-*Google** for the **Summer of 2024**.
+Imagine that you have applied for a **Software Engineering Internship** at **Google** for the **Summer of 2024**.
 
 To **add your internship application**, go to the _Command Box_ and type the
 following command:
@@ -663,11 +662,11 @@ add n/COMPANY_NAME r/ROLE c/CYCLE [s/STATUS] [d/DEADLINE]
    or term.
     * Example: `Summer`, `Winter`
       <box type="warning" seamless>
-
-   Please ensure the cycles you enter are valid for your use. This design allows
-   for versatility in usage without strict
-   validation that could hinder your experience.
-   </box>
+   
+      Please ensure the cycles you enter are valid for your use. This design allows
+      for versatility in usage without strict
+      validation that could hinder your experience.
+      </box>
 
 4. **s/STATUS** (Optional): The current status of your application.
    <box type="info" seamless>
@@ -692,8 +691,8 @@ add n/COMPANY_NAME r/ROLE c/CYCLE [s/STATUS] [d/DEADLINE]
 
 ##### Example:
 
-To add an internship application for a **Software Engineering** role at **Google
-** for the **Summer 2024** cycle with an **Offered**
+To add an internship application for a **Software Engineering** role at 
+**Google** for the **Summer 2024** cycle with an **Offered**
 status and a deadline on **25th October 2023**, you can type:
 
 ```
@@ -765,8 +764,8 @@ At least **one** of the optional parameters must be provided.
 
 Let's say you want to edit the second internship application in your list to
 change the company name to **Amazon**,
-update the role to **Data Analyst Intern**, and modify the status to **Interview
-**. The command would look like this:
+update the role to **Data Analyst Intern**, and modify the status to 
+**Interview**. The command would look like this:
 
 ```
 edit 2 n/Amazon r/Data Analyst Intern s/Interview
@@ -1130,8 +1129,8 @@ At least **one** of the optional parameters must be provided.
 
 ##### Example:
 
-Suppose you want to quickly locate all your applications for the company *
-*Google**. Your command would be:
+Suppose you want to quickly locate all your applications for the company 
+**Google**. Your command would be:
 
 ```
 find n/Google
@@ -1208,7 +1207,8 @@ sort [n/ORDER] [r/ORDER] [c/ORDER] [s/ORDER] [d/ORDER]
 * **c/ORDER** (Optional): Sorts applications by the cycle.
 * **s/ORDER** (Optional): Sorts applications by their status.
 * **d/ORDER** (Optional): Sorts applications by their deadline.
-  <box type="info" seamless>
+
+<box type="info" seamless>
 
 **Note about sorting by `Deadline`**:
 
@@ -1380,8 +1380,8 @@ ________________________________________________________________________________
 | **[Clear](#clearing-your-internship-applications-clear)**       | `clear`                                                                                  | `clear`                                                                     |
 | **[Exit](#exiting-letsgethired-exit)**                          | `exit`                                                                                   | `exit`                                                                      |
 
-This table provides a quick and clear reference to the commands available in *
-*_LetsGetHired_**.
+This table provides a quick and clear reference to the commands available in 
+**_LetsGetHired_**.
 You can use it to efficiently navigate through the program and manage your
 internship applications.
 
